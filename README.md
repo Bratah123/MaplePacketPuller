@@ -12,12 +12,17 @@ Some things need to know / Issues:
   - GET_ALL_DECODES constant in the code, when turned to true has a higher accuracy for finding decodes but at the price of aesthetics :P
   - This script is assuming you have named the decodes function in IDA accordingly to your function you want to pull packet structure from
 
+Tech Stack Used
+ - Python Version 3.8.6
+ - IDA 7.0 Pro 32-bit (for analyzing an unpacked Maplestory.exe)
+ - Atom Text Editor
+
 <h1> How to use</h1>
  0.5) You will have to create a new txt file in the Functions Directory with the copy pasted code from IDA (examples in there)
  
  1. Open it in a text editor of choice (I use atom), open cmd and type in Analysis.py
  
- 2. Just type the name of the file you want to analyze
+ 2. Just type the name of the file you want to analyze (the txt file you just created)
  
  3. Let the program analyze it.
  
