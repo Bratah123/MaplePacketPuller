@@ -11,7 +11,7 @@ Some things need to know / Issues:
   - while() loops aren't handled to let you see whether a decode is in the scope of one well (can be rectify if GET_ALL_DECODES = true maybe)
   - GET_ALL_DECODES constant in the code, when turned to true has a higher accuracy for finding decodes but at the price of aesthetics :P
   - This script is assuming you have named the decodes function in IDA accordingly to your function you want to pull packet structure from
-  - Does not display switch cases, can be easily handled 
+  - Does not display switch cases (can figure out yourself), can be easily handled 
 
 Tech Stack Used
  - Python Version 3.8.6
