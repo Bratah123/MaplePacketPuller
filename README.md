@@ -1,4 +1,4 @@
-# MaplePacketPuller
+# Maplestory Packet Puller
 
 Features:
  - Pulls Keywords in IDA Pseudocode and formats them in order for Server Encodes
