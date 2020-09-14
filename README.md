@@ -14,9 +14,13 @@ Some things need to know / Issues:
 
 <h1> How to use</h1>
  0.5) You will have to create a new txt file in the Functions Directory with the copy pasted code from IDA (examples in there)
+ 
  1. Open it in a text editor of choice (I use atom), open cmd and type in Analysis.py
+ 
  2. Just type the name of the file you want to analyze
+ 
  3. Let the program analyze it.
+ 
  4. Now packet structure should be yours!
   
 
