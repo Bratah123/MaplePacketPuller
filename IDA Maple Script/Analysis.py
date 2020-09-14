@@ -156,7 +156,7 @@ if __name__ == '__main__':
             while beautified_arr[j] != "while()":
                 beautified_arr[j] = f"  {beautified_arr[j]}"
                 j += 1
-        # some functions, this will cause an index out of range error
+        # some functions, this will cause an index out of range error (comment out this part if so)
         if beautified_arr[i] == "  do:":
             j = i + 1
             while beautified_arr[j] != "  while()":
