@@ -1,0 +1,1673 @@
+void __thiscall CStage::OnSetField(CStage *this, CInPacket *iPacket)
+{
+  CWvsContext *v2; // ebx
+  bool v3; // zf
+  int v4; // edi
+  int v5; // eax
+  unsigned __int16 v6; // ax
+  char *v7; // edi
+  ZXString<char> *v8; // eax
+  ZXString<char> *v9; // eax
+  char *v10; // edi
+  unsigned int v11; // edi
+  unsigned int v12; // ebx
+  int v13; // ecx
+  ZRef<CharacterData> *v14; // eax
+  int *v15; // edi
+  TSecType<unsigned long> *v16; // edi
+  unsigned int v17; // eax
+  char v18; // al
+  unsigned int v19; // edi
+  unsigned int v20; // eax
+  CharacterData *v21; // edx
+  int v22; // ecx
+  unsigned __int8 v23; // al
+  char v24; // al
+  IWzProperty *v25; // edi
+  CInterStage *v26; // eax
+  CStage *v27; // eax
+  unsigned int v28; // eax
+  CField *v29; // eax
+  unsigned int v30; // eax
+  CStage *v31; // ebx
+  int v32; // edi
+  CField *v33; // ecx
+  CStage *v34; // edi
+  unsigned int v35; // eax
+  char *v36; // eax
+  CMapLoadable *v37; // edi
+  char *v38; // ebx
+  char *v39; // edi
+  CUser *v40; // edi
+  IWzVector2D *v41; // ecx
+  CStage *v42; // ebx
+  CStage *v43; // ebx
+  int v44; // edx
+  CStage *v45; // ecx
+  CStage *v46; // esi
+  unsigned int v47; // eax
+  unsigned int v48; // edx
+  CStage *v49; // esi
+  unsigned int v50; // eax
+  CUtilDlgEx *v51; // ecx
+  Ztl_variant_t *v52; // eax
+  const wchar_t *v53; // eax
+  CUtilDlgEx *v54; // ecx
+  Ztl_variant_t *v55; // eax
+  const wchar_t *v56; // eax
+  CUtilDlgEx *v57; // ecx
+  Ztl_variant_t *v58; // eax
+  const wchar_t *v59; // eax
+  char *v60; // ebx
+  IWzProperty *v61; // esi
+  char *v62; // esi
+  IGObjVtbl *v63; // edx
+  ZMap<long,unsigned long,long>::_PAIR **v64; // eax
+  unsigned int v65; // ecx
+  ZMap<long,unsigned long,long>::_PAIR *v66; // eax
+  ZMap<long,unsigned long,long>::_PAIR *v67; // edi
+  ZMap<long,unsigned long,long>::_PAIR *v68; // ebx
+  unsigned int v69; // ecx
+  int v70; // edx
+  ZMap<long,unsigned long,long>::_PAIR **v71; // esi
+  unsigned int v72; // ecx
+  ZMap<long,unsigned long,long>::_PAIR **v73; // eax
+  CWvsContext *v74; // esi
+  unsigned int (__stdcall *v75)(IUnknown *); // eax
+  CharacterData *v76; // ebx
+  IWzProperty *v77; // esi
+  CWvsContext *v78; // esi
+  CUtilDlgEx *v79; // eax
+  int v80; // ecx
+  CUtilDlgEx *v81; // eax
+  CUtilDlgEx *v82; // esi
+  StringPool *v83; // eax
+  CharacterData *v84; // eax
+  int v85; // eax
+  CUtilDlgEx *v86; // eax
+  int v87; // ecx
+  CUtilDlgEx *v88; // eax
+  CUtilDlgEx *v89; // esi
+  StringPool *v90; // eax
+  int v91; // edx
+  CUtilDlgEx *v92; // eax
+  int v93; // ecx
+  CUtilDlgEx *v94; // eax
+  CUtilDlgEx *v95; // esi
+  StringPool *v96; // eax
+  CStage *v97; // eax
+  CStage *v98; // esi
+  char *v99; // eax
+  int v100; // ecx
+  unsigned int v101; // edi
+  unsigned int v102; // ebx
+  unsigned int v103; // esi
+  HRESULT v104; // eax
+  int v105; // ecx
+  StringPool *v106; // eax
+  char *v107; // eax
+  CUtilDlgEx *v108; // eax
+  CUtilDlgEx *v109; // eax
+  CUtilDlgEx *v110; // esi
+  unsigned int v111; // ecx
+  int v112; // eax
+  CStage *v113; // esi
+  CWvsContext *v114; // esi
+  CStage *v115; // esi
+  unsigned __int16 v116; // si
+  int v117; // ecx
+  int v118; // edx
+  int v119; // eax
+  StringPool *v120; // eax
+  char *v121; // eax
+  void *v122; // esi
+  HRESULT v123; // eax
+  HRESULT v124; // eax
+  _bstr_t::Data_t *v125; // ecx
+  StringPool *v126; // eax
+  Ztl_variant_t *v127; // eax
+  IUnknown *v128; // eax
+  void (*v129)(void); // edx
+  HRESULT v130; // eax
+  void (__stdcall *v131)(VARIANTARG *); // esi
+  IWzProperty *v132; // edi
+  void *v133; // esp
+  const wchar_t *v134; // eax
+  Ztl_variant_t *v135; // eax
+  _com_ptr_t<_com_IIID<IUnknown,&_GUID_00000000_0000_0000_c000_000000000046> > *v136; // eax
+  int v137; // ecx
+  IWzProperty *v138; // edi
+  StringPool *v139; // eax
+  Ztl_variant_t *v140; // eax
+  const wchar_t *v141; // eax
+  ZXString<char> *v142; // eax
+  char *v143; // ecx
+  void *v144; // esi
+  char *v145; // esi
+  IUnknownVtbl *v146; // edx
+  char *v147; // esi
+  CWvsContext *v148; // esi
+  _FILETIME v149; // rax
+  char *v150; // eax
+  CUtilDlgEx *v151; // eax
+  int v152; // esi
+  int v153; // eax
+  int v154; // edi
+  ZXString<char> *v155; // ebx
+  const char *v156; // eax
+  int v157; // ecx
+  CUtilDlgEx *v158; // eax
+  char *v159; // esi
+  TSecType<unsigned long> *v160; // esi
+  CField *v161; // eax
+  CWvsContext *v162; // edi
+  CField *v163; // eax
+  _FILETIME v164; // rax
+  char *v165; // eax
+  CUtilDlgEx *v166; // eax
+  CWvsContext *v167; // edi
+  CTemporaryStatView *v168; // eax
+  CTemporaryStatView *v169; // eax
+  CStage *v170; // esi
+  char v171; // al
+  CStage *v172; // esi
+  CharacterData *v173; // eax
+  int v174; // eax
+  char *v175; // eax
+  bool v176; // bl
+  void *v177; // esi
+  unsigned int v178; // eax
+  unsigned int v179; // edx
+  unsigned int v180; // eax
+  int v181; // esi
+  unsigned int v182; // edx
+  int v183; // esi
+  unsigned int v184; // eax
+  unsigned int v185; // edx
+  unsigned __int16 v186; // si
+  unsigned int v187; // eax
+  unsigned int v188; // edx
+  unsigned int v189; // eax
+  int v190; // esi
+  unsigned int v191; // eax
+  unsigned int v192; // edx
+  char *v193; // eax
+  char *v194; // esi
+  char *v195; // esi
+  volatile LONG *v196; // edi
+  ZXString<char> *v197; // esi
+  char *v198; // esi
+  ZXString<char> v199; // [esp-A0h] [ebp-2E8h]
+  const wchar_t *v200; // [esp-9Ch] [ebp-2E4h]
+  ZRef<CDialog> *v201; // [esp-98h] [ebp-2E0h]
+  int v202; // [esp-94h] [ebp-2DCh]
+  int v203; // [esp-90h] [ebp-2D8h]
+  IWzProperty *v204; // [esp-8Ch] [ebp-2D4h]
+  int v205; // [esp-88h] [ebp-2D0h]
+  Ztl_bstr_t v206; // [esp-84h] [ebp-2CCh]
+  int v207; // [esp-80h] [ebp-2C8h]
+  volatile LONG *v208; // [esp-74h] [ebp-2BCh]
+  Ztl_bstr_t v209; // [esp-64h] [ebp-2ACh]
+  Ztl_variant_t *v210; // [esp-60h] [ebp-2A8h]
+  unsigned int v211; // [esp-5Ch] [ebp-2A4h]
+  int v212; // [esp-58h] [ebp-2A0h]
+  int v213; // [esp-54h] [ebp-29Ch]
+  int v214; // [esp-50h] [ebp-298h]
+  int v215; // [esp-4Ch] [ebp-294h]
+  int *v216; // [esp-48h] [ebp-290h]
+  ZXString<char> v217; // [esp-44h] [ebp-28Ch]
+  ZRef<GW_ItemSlotBase> v218; // [esp-40h] [ebp-288h]
+  int v219; // [esp-3Ch] [ebp-284h]
+  unsigned int v220; // [esp-38h] [ebp-280h]
+  _com_ptr_t<_com_IIID<IWzVector2D,&_GUID_f28bd1ed_3deb_4f92_9eec_10ef5a1c3fb4> > v221; // [esp-30h] [ebp-278h]
+  CUtilDlgEx *v222; // [esp-2Ch] [ebp-274h]
+  int v223; // [esp-28h] [ebp-270h]
+  int v224; // [esp-24h] [ebp-26Ch]
+  int v225; // [esp-8h] [ebp-250h]
+  ZXString<char> *v226; // [esp-4h] [ebp-24Ch]
+  CUIPremiumGuide dlg; // [esp+10h] [ebp-238h]
+  Ztl_variant_t v228; // [esp+1E0h] [ebp-68h]
+  CField::INITPARAM paramFieldInit; // [esp+1F0h] [ebp-58h]
+  int nOldChannelID; // [esp+210h] [ebp-38h]
+  int nNotifierCheck; // [esp+214h] [ebp-34h]
+  Ztl_variant_t result; // [esp+218h] [ebp-30h]
+  int bCharacterData; // [esp+228h] [ebp-20h]
+  ZArray<ZXString<char> > asNotifierContent; // [esp+22Ch] [ebp-1Ch]
+  FILETIME FileTime; // [esp+230h] [ebp-18h]
+  ZXString<char> sNotifierTitle; // [esp+238h] [ebp-10h]
+  int v237; // [esp+244h] [ebp-4h]
+  _FILETIME ft; // [esp+248h] [ebp+0h]
+  FILETIME v239; // [esp+250h] [ebp+8h]
+  int bCanNotifyAnnouncedQuest; // [esp+258h] [ebp+10h]
+  _SYSTEMTIME st; // [esp+25Ch] [ebp+14h]
+  int nFieldWidth; // [esp+26Ch] [ebp+24h]
+  ZRef<CharacterData> pCharacterData; // [esp+270h] [ebp+28h]
+  _com_ptr_t<_com_IIID<IWzProperty,&_GUID_986515d9_0a0b_4929_8b4f_718682177b92> > pBlockReasonIter; // [esp+278h] [ebp+30h]
+  COutPacket oPacket; // [esp+27Ch] [ebp+34h]
+  CField::PROPERTY prop; // [esp+290h] [ebp+48h]
+  ZRef<CUtilDlgEx> pQDlg; // [esp+298h] [ebp+50h]
+  int nFieldHeight; // [esp+2A0h] [ebp+58h]
+  _com_ptr_t<_com_IIID<IWzProperty,&_GUID_986515d9_0a0b_4929_8b4f_718682177b92> > pChatBlockReason; // [esp+2A4h] [ebp+5Ch]
+  ZXString<char> sMsg2; // [esp+2A8h] [ebp+60h]
+  CWvsContext *pCtx; // [esp+2ACh] [ebp+64h]
+  ZXString<char> sNotifierMessage; // [esp+2B0h] [ebp+68h]
+  bool bPopupDlg; // [esp+2B7h] [ebp+6Fh]
+
+  pChatBlockReason.m_pInterface = (IWzProperty *)this;
+  v2 = (CWvsContext *)TSingleton<CWvsContext>::ms_pInstance.m_Data;
+  v3 = LOBYTE(TSingleton<CWvsContext>::ms_pInstance.m_Data[2614].m_str) == 0;
+  nOldChannelID = 0;
+  pCtx = (CWvsContext *)TSingleton<CWvsContext>::ms_pInstance.m_Data;
+  if ( !v3 )
+    return;
+  if ( ProgramState::GetProgramState() == 2 )
+    CWvsApp::SendPerformanceClientLoadingPacket((CWvsApp *)TSingleton<CWvsApp>::ms_pInstance._m_pStr);
+  ProgramState::SetProgramState(InGame_Field);
+  CWvsApp::SetLastUpdatePerformanceLog((CWvsApp *)TSingleton<CWvsApp>::ms_pInstance._m_pStr, 10000);
+  CWvsApp::SetLastUpdatePing_ClientToGame((CWvsApp *)TSingleton<CWvsApp>::ms_pInstance._m_pStr, 10000);
+  CWvsContext::SetBackSpeedCtrl(v2, 1000, 1000, 1);
+  nOldChannelID = v2->m_nChannelID;
+  v4 = nOldChannelID;
+  v5 = CInPacket::Decode4(iPacket);
+  CWvsContext::SetChannelID(v2, v5);
+  v2->m_bDev = (unsigned __int8)CInPacket::Decode1(iPacket);
+  v2->m_dwOldDriverID = CInPacket::Decode4(iPacket);
+  if ( v4 != v2->m_nChannelID )
+  {
+    v2->m_bKeep_PartySearch = 1;
+    CWvsContext::CancelNegotiation(v2);
+    CWvsContext::UI_Close(v2, 180);
+  }
+  v226 = (ZXString<char> *)1;
+  bCanNotifyAnnouncedQuest = (int)&v225;
+  v225 = 0;
+  ZXString<char>::Assign((ZXString<char> *)&v225, sStrDefault, -1);
+  CWvsContext::DeleteFadeWnd(v2, 32, 0, 0, (ZXString<char>)v225, (int)v226);
+  v226 = (ZXString<char> *)1;
+  bCanNotifyAnnouncedQuest = (int)&v225;
+  v225 = 0;
+  ZXString<char>::Assign((ZXString<char> *)&v225, sStrDefault, -1);
+  CWvsContext::DeleteFadeWnd(v2, 31, 0, 0, (ZXString<char>)v225, (int)v226);
+  bPopupDlg = CInPacket::Decode1(iPacket);
+  CInPacket::Decode4(iPacket);
+  nFieldWidth = CInPacket::Decode4(iPacket);
+  nFieldHeight = CInPacket::Decode4(iPacket);
+  bCharacterData = (unsigned __int8)CInPacket::Decode1(iPacket);
+  v6 = CInPacket::Decode2(iPacket);
+  v7 = (char *)v6;
+  nNotifierCheck = v6;
+  sNotifierTitle._m_pStr = 0;
+  ZXString<char>::Assign(&sNotifierTitle, sStrDefault, -1);
+  v237 = 0;
+  asNotifierContent.a = 0;
+  LOBYTE(v237) = 1;
+  if ( v7 )
+  {
+    v8 = CInPacket::DecodeStr(iPacket, (ZXString<char> *)&pBlockReasonIter);
+    LOBYTE(v237) = 2;
+    ZXString<char>::operator=(&sNotifierTitle, v8);
+    LOBYTE(v237) = 1;
+    if ( pBlockReasonIter.m_pInterface )
+    {
+      sMsg2._m_pStr = (char *)&pBlockReasonIter.m_pInterface[-3];
+      if ( InterlockedDecrement((volatile LONG *)&pBlockReasonIter.m_pInterface[-3]) <= 0 )
+        ZAllocEx<ZAllocStrSelector<char>>::Free(&ZAllocEx<ZAllocStrSelector<char>>::_s_alloc, sMsg2._m_pStr);
+    }
+    if ( (signed int)v7 > 0 )
+    {
+      sNotifierMessage._m_pStr = v7;
+      do
+      {
+        CInPacket::DecodeStr(iPacket, &sMsg2);
+        v226 = &sMsg2;
+        LOBYTE(v237) = 3;
+        v9 = ZArray<ZXString<char>>::InsertBefore(&asNotifierContent, -1);
+        ZXString<char>::operator=(v9, v226);
+        LOBYTE(v237) = 1;
+        if ( sMsg2._m_pStr )
+        {
+          v10 = sMsg2._m_pStr - 12;
+          if ( InterlockedDecrement((volatile LONG *)sMsg2._m_pStr - 3) <= 0 )
+            ZAllocEx<ZAllocStrSelector<char>>::Free(&ZAllocEx<ZAllocStrSelector<char>>::_s_alloc, v10);
+        }
+        --sNotifierMessage._m_pStr;
+      }
+      while ( sNotifierMessage._m_pStr );
+    }
+  }
+  pCharacterData.p = 0;
+  LOBYTE(v237) = 4;
+  if ( bCharacterData )
+  {
+    v11 = CInPacket::Decode4(iPacket);
+    v12 = CInPacket::Decode4(iPacket);
+    pBlockReasonIter.m_pInterface = (IWzProperty *)CInPacket::Decode4(iPacket);
+    CalcDamage::SetSeed(&pCtx->m_CalcDamage, v11, v12, (unsigned int)pBlockReasonIter.m_pInterface);
+    CRand32::Seed(&pCtx->m_RndActionMan, v11, v12, (unsigned int)pBlockReasonIter.m_pInterface);
+    ZRef<CharacterData>::_Alloc(&pCharacterData);
+    CharacterData::Decode(pCharacterData.p, iPacket, 0);
+    v2 = pCtx;
+    TSingleton<CAswanTimeTableManClient>::ms_pInstance->m_bAfterMigrantionFirst = 1;
+  }
+  else
+  {
+    v13 = (unsigned __int8)CInPacket::Decode1(iPacket);
+    if ( (*((_DWORD *)TSingleton<CUserLocal>::ms_pInstance._m_pStr + 336) & 0xFFFFFFFE) == 18 || v13 )
+    {
+      CWvsContext::OnRevive(v2);
+      v2->m_bUsingBuffProtector = 0;
+    }
+    v14 = CWvsContext::GetCharacterData(v2, (ZRef<CharacterData> *)&pQDlg);
+    LOBYTE(v237) = 5;
+    ZRef<CharacterData>::operator=(&pCharacterData, v14);
+    LOBYTE(v237) = 4;
+    if ( pQDlg.p )
+    {
+      v15 = &pQDlg.p[-1].m_rcSelectedEffect.right;
+      v226 = (ZXString<char> *)&pQDlg.p[-1].m_rcSelectedEffect.bottom;
+      if ( !InterlockedDecrement((volatile LONG *)v226) )
+      {
+        InterlockedIncrement(v15 + 1);
+        if ( v15 )
+          (*(void (__thiscall **)(int *, signed int))*v15)(v15, 1);
+      }
+    }
+    v16 = &pCharacterData.p->characterStat.dwPosMap;
+    v2->m_dwOldFieldID = TSecType<unsigned long>::GetData(&pCharacterData.p->characterStat.dwPosMap);
+    v17 = CInPacket::Decode4(iPacket);
+    TSecType<unsigned long>::SetData(v16, v17);
+    v18 = CInPacket::Decode1(iPacket);
+    pCharacterData.p->characterStat.nPortal = v18;
+    v19 = CInPacket::Decode4(iPacket);
+    v20 = CRand32::Random(&g_rand);
+    v21 = pCharacterData.p;
+    pCharacterData.p->characterStat._ZtlSecureTear_nHP[0] = v20;
+    v22 = __ROR4__(v19 ^ v20, 5);
+    v21->characterStat._ZtlSecureTear_nHP[1] = v22;
+    v21->characterStat._ZtlSecureTear_nHP_CS = v22 + __ROR4__(v20 ^ 0xBAADF00D, 5);
+  }
+  v23 = CInPacket::Decode1(iPacket);
+  CWvsContext::SetWhiteFadeInOut(v2, v23);
+  v24 = CInPacket::Decode1(iPacket);
+  v25 = pChatBlockReason.m_pInterface;
+  if ( v24 )
+    BYTE1(pChatBlockReason.m_pInterface[6].vfptr) = 1;
+  if ( BYTE1(v25[6].vfptr) )
+  {
+    v225 = 1500;
+    BYTE1(v25[6].vfptr) = 0;
+    if ( CAnimationDisplayer::OverlapScreen(v225) )
+      LOBYTE(v25[6].vfptr) = 0;
+  }
+  if ( !g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CInterStage::ms_RTTI_CInterStage) )
+  {
+    v26 = (CInterStage *)ZAllocEx<ZAllocAnonSelector>::Alloc(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, 0x1Cu);
+    bCanNotifyAnnouncedQuest = (int)v26;
+    LOBYTE(v237) = 6;
+    if ( v26 )
+      CInterStage::CInterStage(v26);
+    else
+      v27 = 0;
+    LOBYTE(v237) = 4;
+    set_stage(v27, 0);
+  }
+  paramFieldInit.pCharacterData.p = 0;
+  paramFieldInit.pFieldCustom.p = 0;
+  LOBYTE(v237) = 7;
+  ZRef<CharacterData>::operator=(&paramFieldInit.pCharacterData, &pCharacterData);
+  paramFieldInit.bFieldKey = bPopupDlg;
+  CInPacket::DecodeBuffer(iPacket, &paramFieldInit.ftServer, 8u);
+  paramFieldInit.nMobStatAdjustRate = CInPacket::Decode4(iPacket);
+  if ( CInPacket::Decode1(iPacket) )
+  {
+    ZRef<CFieldCustom>::_Alloc(&paramFieldInit.pFieldCustom);
+    CFieldCustom::Decode(paramFieldInit.pFieldCustom.p, iPacket);
+  }
+  else if ( paramFieldInit.pFieldCustom.p )
+  {
+    if ( !InterlockedDecrement(&paramFieldInit.pFieldCustom.p->_m_nRef) )
+    {
+      InterlockedIncrement(&paramFieldInit.pFieldCustom.p->_m_nRef);
+      if ( paramFieldInit.pFieldCustom.p )
+        ((void (__cdecl *)(signed int))paramFieldInit.pFieldCustom.p->vfptr->__vecDelDtor)(1);
+    }
+    paramFieldInit.pFieldCustom.p = 0;
+  }
+  if ( CInPacket::Decode1(iPacket) )
+    CWvsContext::OnInitPvPStat(v2);
+  bCanNotifyAnnouncedQuest = (unsigned __int8)CInPacket::Decode1(iPacket);
+  v28 = TSecType<unsigned long>::GetData(&pCharacterData.p->characterStat.dwPosMap);
+  v29 = CField::FieldFactory((ZRef<CField> *)&pQDlg, v28)->p;
+  LOBYTE(v237) = 8;
+  set_stage((CStage *)&v29->vfptr, &paramFieldInit);
+  LOBYTE(v237) = 7;
+  if ( pQDlg.p )
+    ZRef<CField>::_ReleaseRaw((ZRef<CField> *)&pQDlg, 0);
+  LOBYTE(v25[6].vfptr) = 1;
+  if ( CInPacket::Decode1(iPacket) )
+  {
+    v30 = CInPacket::Decode4(iPacket);
+    v31 = g_pStage.p;
+    v32 = v30;
+    if ( g_pStage.p && g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+      v33 = (CField *)v31;
+    else
+      v33 = 0;
+    CField::DrawStackEventGauge(v33, v32);
+  }
+  if ( g_pStage.p && g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+  {
+    v34 = g_pStage.p;
+    if ( !g_pStage.p || !g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+      v34 = 0;
+    v35 = TSecType<unsigned long>::GetData((TSecType<unsigned long> *)&v34[33].vfptr);
+    if ( is_banban_base_field(v35) )
+    {
+      v36 = (char *)(unsigned __int8)CInPacket::Decode1(iPacket);
+      if ( (signed int)(unsigned __int8)v36 > 0 )
+      {
+        sNotifierMessage._m_pStr = v36;
+        do
+        {
+          CInPacket::DecodeStr(iPacket, &sMsg2);
+          v37 = (CMapLoadable *)g_pStage.p;
+          v38 = sMsg2._m_pStr;
+          LOBYTE(v237) = 9;
+          if ( !g_pStage.p || !g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+            v37 = 0;
+          CMapLoadable::SetObjectState(v37, v38, -1);
+          LOBYTE(v237) = 7;
+          if ( sMsg2._m_pStr )
+          {
+            v39 = sMsg2._m_pStr - 12;
+            if ( InterlockedDecrement((volatile LONG *)sMsg2._m_pStr - 3) <= 0 )
+              ZAllocEx<ZAllocStrSelector<char>>::Free(&ZAllocEx<ZAllocStrSelector<char>>::_s_alloc, v39);
+          }
+          --sNotifierMessage._m_pStr;
+        }
+        while ( sNotifierMessage._m_pStr );
+      }
+    }
+  }
+  v40 = (CUser *)TSingleton<CUserLocal>::ms_pInstance._m_pStr;
+  CUser::StarPlanetRank::Decode(
+    (CUser::StarPlanetRank *)(TSingleton<CUserLocal>::ms_pInstance._m_pStr + 55044),
+    iPacket);
+  CUser::DrawNameTags(v40);
+  CUser::RemoveMesoCount(v40);
+  if ( g_pStage.p && g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+  {
+    v42 = g_pStage.p;
+    if ( !g_pStage.p || !g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+      v42 = 0;
+    if ( v42[40]._m_pPrev )
+    {
+      v224 = (int)v42[40]._m_pPrev;
+      v223 = 0;
+      v222 = 0;
+      v221.m_pInterface = v41;
+      FileTime.dwHighDateTime = (unsigned int)&v221;
+      IVecCtrlOwner::GetVector2D((IVecCtrlOwner *)&v40->vfptr, &v221);
+      CAnimationDisplayer::SetCenterOrigin(
+        (CAnimationDisplayer *)TSingleton<CAnimationDisplayer>::ms_pInstance.m_pInterface,
+        v221,
+        (int)v222,
+        v223,
+        v224);
+    }
+    v43 = g_pStage.p;
+    if ( !g_pStage.p || !g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+      v43 = 0;
+    v44 = nFieldHeight;
+    v43[173]._m_pPrev = (ZRefCounted *)nFieldWidth;
+    *(_DWORD *)&v43[173].m_bFadeInOut = v44;
+  }
+  if ( CInPacket::Decode1(iPacket) )
+    CWvsContext::DecodeStarPlanetRoundInfo(pCtx, iPacket);
+  CUser::DecodeTextEquipInfo(v40, iPacket);
+  CUser::DecodeFreezeHotEventInfo(v40, iPacket);
+  CUser::DecodeEventBestFriendInfo(v40, iPacket);
+  v45 = g_pStage.p;
+  bPopupDlg = 1;
+  if ( g_pStage.p )
+  {
+    if ( g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+    {
+      v46 = g_pStage.p;
+      if ( !g_pStage.p || !g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+        v46 = 0;
+      v47 = TSecType<unsigned long>::GetData((TSecType<unsigned long> *)&v46[33].vfptr);
+      v45 = g_pStage.p;
+      v48 = v47;
+      goto LABEL_89;
+    }
+    v45 = g_pStage.p;
+  }
+  v48 = 999999999;
+LABEL_89:
+  if ( v48 / 0xF4240 == 330 )
+  {
+    if ( v45 && v45->vfptr->IsKindOf((IUIMsgHandler *)&v45->vfptr, &CField::ms_RTTI_CField) )
+    {
+      v49 = g_pStage.p;
+      if ( !g_pStage.p || !g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+        v49 = 0;
+      v50 = TSecType<unsigned long>::GetData((TSecType<unsigned long> *)&v49[33].vfptr);
+    }
+    else
+    {
+      v50 = 999999999;
+    }
+    CField::GetFieldProp((CField::PROPERTY *)&pQDlg, v50);
+    LOBYTE(v237) = 10;
+    if ( *(_DWORD *)pQDlg.gap0 )
+    {
+      v222 = v51;
+      FileTime.dwHighDateTime = (unsigned int)&v222;
+      _bstr_t::_bstr_t((_bstr_t *)&v222, L"onUserEnter");
+      LOBYTE(v237) = 11;
+      if ( !*(_DWORD *)pQDlg.gap0 )
+        _com_issue_error(-2147467261);
+      LOBYTE(v237) = 10;
+      v52 = IWzProperty::Getitem(*(IWzProperty **)pQDlg.gap0, (Ztl_variant_t *)&st, (Ztl_bstr_t)v222);
+      LOBYTE(v237) = 12;
+      if ( v52->vt == 8 )
+        v53 = v52->bstrVal;
+      else
+        v53 = &sDefault;
+      sNotifierMessage._m_pStr = 0;
+      ZXString<char>::Assign<unsigned short>(&sNotifierMessage, v53, -1);
+      LOBYTE(v237) = 14;
+      if ( st.wYear == 8 )
+      {
+        st.wYear = 0;
+        if ( *(_DWORD *)&st.wHour )
+          ZAPI.CoTaskMemFree((void *)(*(_DWORD *)&st.wHour - 4));
+      }
+      else
+      {
+        VariantClear((VARIANTARG *)&st);
+      }
+      v222 = v54;
+      FileTime.dwHighDateTime = (unsigned int)&v222;
+      _bstr_t::_bstr_t((_bstr_t *)&v222, L"onFirstUserEnter");
+      LOBYTE(v237) = 15;
+      if ( !*(_DWORD *)pQDlg.gap0 )
+        _com_issue_error(-2147467261);
+      LOBYTE(v237) = 14;
+      v55 = IWzProperty::Getitem(*(IWzProperty **)pQDlg.gap0, &result, (Ztl_bstr_t)v222);
+      LOBYTE(v237) = 16;
+      if ( v55->vt == 8 )
+        v56 = v55->bstrVal;
+      else
+        v56 = &sDefault;
+      sMsg2._m_pStr = 0;
+      ZXString<char>::Assign<unsigned short>(&sMsg2, v56, -1);
+      LOBYTE(v237) = 18;
+      if ( result.vt == 8 )
+      {
+        result.vt = 0;
+        if ( result.decVal.Lo32 )
+          ZAPI.CoTaskMemFree((void *)(result.decVal.Lo32 - 4));
+      }
+      else
+      {
+        VariantClear((VARIANTARG *)&result.0);
+      }
+      v222 = v57;
+      FileTime.dwHighDateTime = (unsigned int)&v222;
+      _bstr_t::_bstr_t((_bstr_t *)&v222, L"fieldScript");
+      LOBYTE(v237) = 19;
+      if ( !*(_DWORD *)pQDlg.gap0 )
+        _com_issue_error(-2147467261);
+      LOBYTE(v237) = 18;
+      v58 = IWzProperty::Getitem(*(IWzProperty **)pQDlg.gap0, (Ztl_variant_t *)&ft, (Ztl_bstr_t)v222);
+      LOBYTE(v237) = 20;
+      if ( v58->vt == 8 )
+        v59 = v58->bstrVal;
+      else
+        v59 = &sDefault;
+      pBlockReasonIter.m_pInterface = 0;
+      ZXString<char>::Assign<unsigned short>((ZXString<char> *)&pBlockReasonIter, v59, -1);
+      LOBYTE(v237) = 18;
+      if ( LOWORD(ft.dwLowDateTime) == 8 )
+      {
+        LOWORD(ft.dwLowDateTime) = 0;
+        if ( v239.dwLowDateTime )
+          ZAPI.CoTaskMemFree((void *)(v239.dwLowDateTime - 4));
+      }
+      else
+      {
+        VariantClear((VARIANTARG *)&ft);
+      }
+      v60 = sMsg2._m_pStr;
+      bPopupDlg = (!sNotifierMessage._m_pStr || !*sNotifierMessage._m_pStr)
+               && (!sMsg2._m_pStr || !*sMsg2._m_pStr)
+               && (!pBlockReasonIter.m_pInterface || !LOBYTE(pBlockReasonIter.m_pInterface->vfptr));
+      if ( pBlockReasonIter.m_pInterface )
+      {
+        v61 = pBlockReasonIter.m_pInterface - 3;
+        if ( InterlockedDecrement((volatile LONG *)&pBlockReasonIter.m_pInterface[-3]) <= 0 )
+          ZAllocEx<ZAllocStrSelector<char>>::Free(&ZAllocEx<ZAllocStrSelector<char>>::_s_alloc, v61);
+      }
+      LOBYTE(v237) = 14;
+      if ( v60 && InterlockedDecrement((volatile LONG *)v60 - 3) <= 0 )
+        ZAllocEx<ZAllocStrSelector<char>>::Free(&ZAllocEx<ZAllocStrSelector<char>>::_s_alloc, v60 - 12);
+      LOBYTE(v237) = 10;
+      if ( sNotifierMessage._m_pStr )
+      {
+        v62 = sNotifierMessage._m_pStr - 12;
+        if ( InterlockedDecrement((volatile LONG *)sNotifierMessage._m_pStr - 3) <= 0 )
+          ZAllocEx<ZAllocStrSelector<char>>::Free(&ZAllocEx<ZAllocStrSelector<char>>::_s_alloc, v62);
+      }
+    }
+    LOBYTE(v237) = 7;
+    if ( pQDlg.p )
+    {
+      v63 = pQDlg.p->vfptr;
+      v222 = pQDlg.p;
+      ((void (__cdecl *)(CUtilDlgEx *))v63[2].Update)(pQDlg.p);
+    }
+    if ( *(_DWORD *)pQDlg.gap0 )
+      (*(void (__cdecl **)(_DWORD))(**(_DWORD **)pQDlg.gap0 + 8))(*(_DWORD *)pQDlg.gap0);
+  }
+  if ( bCharacterData )
+  {
+    ZMap<long,long,long>::RemoveAll(&pCtx->m_mSkillCooltimeOver);
+    v64 = pCharacterData.p->mSkillCooltime._m_apTable;
+    if ( v64 && (v65 = (unsigned int)&v64[pCharacterData.p->mSkillCooltime._m_uTableSize], (unsigned int)v64 < v65) )
+    {
+      while ( !*v64 )
+      {
+        ++v64;
+        if ( (unsigned int)v64 >= v65 )
+          goto LABEL_151;
+      }
+      v66 = *v64;
+    }
+    else
+    {
+LABEL_151:
+      v66 = 0;
+    }
+    v67 = v66;
+    while ( v67 )
+    {
+      v68 = v67;
+      v67 = v67->pNext;
+      if ( !v67 )
+      {
+        v69 = pCharacterData.p->mSkillCooltime._m_uTableSize;
+        v70 = __ROR4__(v68->key, 5) % v69;
+        v71 = pCharacterData.p->mSkillCooltime._m_apTable;
+        v72 = (unsigned int)&v71[v69];
+        v73 = &v71[v70 + 1];
+        if ( (unsigned int)v73 < v72 )
+        {
+          while ( !*v73 )
+          {
+            ++v73;
+            if ( (unsigned int)v73 >= v72 )
+              goto LABEL_160;
+          }
+          v67 = *v73;
+        }
+      }
+LABEL_160:
+      CWvsContext::SetSkillCooltimeOverM(pCtx, v68->key, 1000 * v68->value);
+    }
+    v74 = pCtx;
+    CWvsContext::CheckReincarnation(pCtx, 1);
+    CWvsContext::CheckDragonFury(v74, 1);
+  }
+  v75 = pChatBlockReason.m_pInterface[1].vfptr[10].AddRef;
+  v76 = pCharacterData.p;
+  v77 = pChatBlockReason.m_pInterface + 1;
+  FileTime.dwHighDateTime = (unsigned int)&pChatBlockReason.m_pInterface[1];
+  if ( ((int (__thiscall *)(IWzProperty *, CRTTI *))v75)(&pChatBlockReason.m_pInterface[1], &CLogin::ms_RTTI_CLogin) )
+  {
+    v78 = pCtx;
+    if ( !pCtx->m_bDirectionMode
+      && !pCtx->m_bInGameDirectionMode
+      && !pCtx->m_bPhantomStealMode
+      && !pCtx->m_bCursorSnipingMode
+      && pCtx->m_eDarkEffectMode != 2
+      && bPopupDlg )
+    {
+      v79 = (CUtilDlgEx *)ZAllocEx<ZAllocAnonSelector>::Alloc(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, 0xF10u);
+      v239.dwHighDateTime = (unsigned int)v79;
+      LOBYTE(v237) = 21;
+      if ( v79 && (CUtilDlgEx::CUtilDlgEx(v79, 0, 0, 0), v81) && v81 != (CUtilDlgEx *)-8 )
+      {
+        v82 = v81;
+        pQDlg.p = v81;
+        if ( v81 )
+          InterlockedIncrement(&v81->_m_nRef);
+      }
+      else
+      {
+        v82 = 0;
+        pQDlg.p = 0;
+      }
+      v220 = 0;
+      v239.dwHighDateTime = (unsigned int)&v218;
+      v219 = 0;
+      nFieldHeight = (int)&v217;
+      v217._m_pStr = 0;
+      v216 = 0;
+      v215 = 0;
+      v214 = v80;
+      nFieldWidth = (int)&v214;
+      LOBYTE(v237) = 24;
+      v83 = StringPool::GetInstance();
+      StringPool::GetString(v83, (ZXString<char> *)&v214, 0x659u);
+      LOBYTE(v237) = 22;
+      CUtilDlgEx::SetUtilDlgEx(v82, 0, (int)&loc_897B4F + 1, (ZXString<char>)v214, v215, (int)v216, v217, v218, v220);
+      CUtilDlgEx::SetUtilDlgEx_TEXT(v82, 0, 0);
+      CUtilDlgEx::CreateUtilDlgEx(v82);
+      CDialog::DoModal((CDialog *)&v82->vfptr);
+      LOBYTE(v237) = 7;
+      if ( v82 )
+        ZRef<CUtilDlgEx>::_ReleaseRaw(&pQDlg, 0);
+      v78 = pCtx;
+    }
+    v84 = v78->m_pCharacterData.p;
+    if ( v84 )
+    {
+      v220 = v84->characterStat._ZtlSecureTear_nJob_CS;
+      v85 = _ZtlSecureFuse<short>(v84->characterStat._ZtlSecureTear_nJob, v220);
+      if ( ((signed __int16)v85 == 13000 || v85 == 13100)
+        && !v78->m_bDirectionMode
+        && !v78->m_bInGameDirectionMode
+        && !v78->m_bPhantomStealMode
+        && !v78->m_bCursorSnipingMode
+        && v78->m_eDarkEffectMode != 2
+        && bPopupDlg )
+      {
+        v86 = (CUtilDlgEx *)ZAllocEx<ZAllocAnonSelector>::Alloc(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, 0xF10u);
+        v239.dwHighDateTime = (unsigned int)v86;
+        LOBYTE(v237) = 25;
+        if ( v86 && (CUtilDlgEx::CUtilDlgEx(v86, 0, 0, 0), v88) && v88 != (CUtilDlgEx *)-8 )
+        {
+          v89 = v88;
+          pQDlg.p = v88;
+          if ( v88 )
+            InterlockedIncrement(&v88->_m_nRef);
+        }
+        else
+        {
+          v89 = 0;
+          pQDlg.p = 0;
+        }
+        v220 = 0;
+        v239.dwHighDateTime = (unsigned int)&v218;
+        v219 = 0;
+        nFieldHeight = (int)&v217;
+        v217._m_pStr = 0;
+        v216 = 0;
+        v215 = 0;
+        v214 = v87;
+        nFieldWidth = (int)&v214;
+        LOBYTE(v237) = 28;
+        v90 = StringPool::GetInstance();
+        StringPool::GetString(v90, (ZXString<char> *)&v214, 0x65Au);
+        LOBYTE(v237) = 26;
+        CUtilDlgEx::SetUtilDlgEx(v89, 0, (int)&loc_897B4F + 1, (ZXString<char>)v214, v215, (int)v216, v217, v218, v220);
+        CUtilDlgEx::SetUtilDlgEx_TEXT(v89, 0, 0);
+        CUtilDlgEx::CreateUtilDlgEx(v89);
+        CDialog::DoModal((CDialog *)&v89->vfptr);
+        LOBYTE(v237) = 7;
+        ZRef<CUtilDlgEx>::~ZRef<CUtilDlgEx>(&pQDlg);
+      }
+    }
+    v91 = (unsigned __int8)v76->characterStat._ZtlSecureTear_nLevel[1];
+    if ( v91 + __ROR4__((unsigned __int8)v76->characterStat._ZtlSecureTear_nLevel[0] ^ 0xBAADF00D, 5) != v76->characterStat._ZtlSecureTear_nLevel_CS )
+    {
+      *(_DWORD *)pQDlg.gap0 = 5;
+      pQDlg.p = (CUtilDlgEx *)pCharacterData.p;
+      _CxxThrowException(&pQDlg, &_TI1_AVZException__);
+    }
+    if ( ((unsigned __int8)v91 ^ v76->characterStat._ZtlSecureTear_nLevel[0]) == 1 )
+    {
+      v220 = v76->characterStat._ZtlSecureTear_nEXP64_CS;
+      if ( !_ZtlSecureFuse<__int64>(v76->characterStat._ZtlSecureTear_nEXP64, v220)
+        && !pCtx->m_bDirectionMode
+        && !pCtx->m_bInGameDirectionMode
+        && CWvsContext::IsEnableUI_Mode(pCtx) )
+      {
+        v92 = (CUtilDlgEx *)ZAllocEx<ZAllocAnonSelector>::Alloc(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, 0xF10u);
+        v239.dwHighDateTime = (unsigned int)v92;
+        LOBYTE(v237) = 29;
+        if ( v92 && (CUtilDlgEx::CUtilDlgEx(v92, 0, 0, 0), v94) && v94 != (CUtilDlgEx *)-8 )
+        {
+          v95 = v94;
+          pQDlg.p = v94;
+          if ( v94 )
+            InterlockedIncrement(&v94->_m_nRef);
+        }
+        else
+        {
+          v95 = 0;
+          pQDlg.p = 0;
+        }
+        v220 = 0;
+        v239.dwHighDateTime = (unsigned int)&v218;
+        v219 = 0;
+        nFieldHeight = (int)&v217;
+        v217._m_pStr = 0;
+        v216 = 0;
+        v215 = 0;
+        v214 = v93;
+        nFieldWidth = (int)&v214;
+        LOBYTE(v237) = 32;
+        v96 = StringPool::GetInstance();
+        StringPool::GetString(v96, (ZXString<char> *)&v214, 0x643u);
+        LOBYTE(v237) = 30;
+        CUtilDlgEx::SetUtilDlgEx(v95, 0, (int)&loc_897B4F + 1, (ZXString<char>)v214, v215, (int)v216, v217, v218, v220);
+        CUtilDlgEx::SetUtilDlgEx_TEXT(v95, 0, 0);
+        CUtilDlgEx::CreateUtilDlgEx(v95);
+        CDialog::DoModal((CDialog *)&v95->vfptr);
+        LOBYTE(v237) = 7;
+        ZRef<CUtilDlgEx>::~ZRef<CUtilDlgEx>(&pQDlg);
+      }
+    }
+    v97 = g_pStage.p;
+    if ( g_pStage.p )
+    {
+      if ( g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField)
+        && g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+      {
+        v98 = g_pStage.p;
+        if ( !g_pStage.p || !g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+          v98 = 0;
+        if ( TSecType<unsigned long>::GetData((TSecType<unsigned long> *)&v98[33].vfptr) )
+        {
+          if ( !pCtx->m_bDirectionMode && !pCtx->m_bInGameDirectionMode && CWvsContext::IsEnableUI_Mode(pCtx) )
+          {
+            v99 = TSingleton<CConfig>::ms_pInstance._m_pStr;
+            if ( *((_DWORD *)TSingleton<CConfig>::ms_pInstance._m_pStr + 8) )
+            {
+              if ( (unsigned int)((*((_DWORD *)TSingleton<CConfig>::ms_pInstance._m_pStr + 3827)
+                                 - *((_DWORD *)TSingleton<CConfig>::ms_pInstance._m_pStr + 3826)) >> 3) >= 2 )
+              {
+                v100 = *((_DWORD *)TSingleton<CConfig>::ms_pInstance._m_pStr + 3826);
+                v101 = *(_DWORD *)(v100
+                                 + 8 * ((*((_DWORD *)TSingleton<CConfig>::ms_pInstance._m_pStr + 3827) - v100) >> 3)
+                                 - 8);
+                v102 = *(_DWORD *)(v100
+                                 + 8 * ((*((_DWORD *)TSingleton<CConfig>::ms_pInstance._m_pStr + 3827) - v100) >> 3)
+                                 - 4);
+                v103 = (*((_DWORD *)TSingleton<CConfig>::ms_pInstance._m_pStr + 30) != 0) - 1;
+                if ( !g_gr.m_pInterface )
+                  _com_issue_error(-2147467261);
+                v104 = IWzGr2D::CheckMode(g_gr.m_pInterface, v103, v101, v102);
+                if ( v104 == 1 )
+                {
+                  v105 = *((_DWORD *)TSingleton<CConfig>::ms_pInstance._m_pStr + 3826);
+                  v101 = *(_DWORD *)(v105
+                                   + 8 * ((*((_DWORD *)TSingleton<CConfig>::ms_pInstance._m_pStr + 3827) - v105) >> 3)
+                                   - 16);
+                  v102 = *(_DWORD *)(v105
+                                   + 8 * ((*((_DWORD *)TSingleton<CConfig>::ms_pInstance._m_pStr + 3827) - v105) >> 3)
+                                   - 12);
+                  if ( !g_gr.m_pInterface )
+                    _com_issue_error(-2147467261);
+                  v104 = IWzGr2D::CheckMode(g_gr.m_pInterface, v103, v101, v102);
+                }
+                if ( !v104 && (get_screen_height() != v102 || get_screen_width() != v101) )
+                {
+                  pChatBlockReason.m_pInterface = 0;
+                  v217._m_pStr = (char *)1604;
+                  v216 = &nFieldHeight;
+                  LOBYTE(v237) = 33;
+                  v106 = StringPool::GetInstance();
+                  v107 = StringPool::GetString(v106, (ZXString<char> *)v216, (unsigned int)v217._m_pStr)->_m_pStr;
+                  v217._m_pStr = (char *)v102;
+                  v216 = (int *)v101;
+                  LOBYTE(v237) = 34;
+                  ZXString<char>::Format((ZXString<char> *)&pChatBlockReason, v107, v101, v102);
+                  LOBYTE(v237) = 33;
+                  ZXString<char>::~ZXString<char>((ZXString<char> *)&nFieldHeight);
+                  v108 = (CUtilDlgEx *)ZAllocEx<ZAllocAnonSelector>::Alloc(
+                                         &ZAllocEx<ZAllocAnonSelector>::_s_alloc,
+                                         0xF10u);
+                  v239.dwHighDateTime = (unsigned int)v108;
+                  LOBYTE(v237) = 35;
+                  if ( v108 && (CUtilDlgEx::CUtilDlgEx(v108, 0, 0, 0), v109) && v109 != (CUtilDlgEx *)-8 )
+                  {
+                    v110 = v109;
+                    pQDlg.p = v109;
+                    if ( v109 )
+                      InterlockedIncrement(&v109->_m_nRef);
+                  }
+                  else
+                  {
+                    v110 = 0;
+                    pQDlg.p = 0;
+                  }
+                  CUtilDlgEx::SetUtilDlgEx_Param(v110, 1);
+                  v217._m_pStr = 0;
+                  v239.dwHighDateTime = (unsigned int)&v215;
+                  v216 = 0;
+                  nFieldHeight = (int)&v214;
+                  v214 = 0;
+                  v213 = 1;
+                  v212 = 0;
+                  v211 = v111;
+                  nFieldWidth = (int)&v211;
+                  LOBYTE(v237) = 38;
+                  ZXString<char>::ZXString<char>((ZXString<char> *)&v211, (ZXString<char> *)&pChatBlockReason);
+                  LOBYTE(v237) = 36;
+                  CUtilDlgEx::SetUtilDlgEx(
+                    v110,
+                    1,
+                    (int)&loc_897B4F + 1,
+                    (ZXString<char>)v211,
+                    v212,
+                    v213,
+                    (ZXString<char>)v214,
+                    *(ZRef<GW_ItemSlotBase> *)&v215,
+                    (int)v217._m_pStr);
+                  CUtilDlgEx::SetUtilDlgEx_YESNO(v110);
+                  CUtilDlgEx::CreateUtilDlgEx(v110);
+                  v112 = CDialog::DoModal((CDialog *)&v110->vfptr);
+                  *((_DWORD *)TSingleton<CConfig>::ms_pInstance._m_pStr + 9) = 5;
+                  if ( v112 == 7 )
+                  {
+                    CConfig::SaveGlobal((CConfig *)TSingleton<CConfig>::ms_pInstance._m_pStr);
+                    CConfig::SaveUIPos((CConfig *)TSingleton<CConfig>::ms_pInstance._m_pStr);
+                  }
+                  else
+                  {
+                    CWvsContext::SetScreenResolutionWH(
+                      (CWvsContext *)TSingleton<CWvsContext>::ms_pInstance.m_Data,
+                      v101,
+                      v102,
+                      1);
+                    CWvsContext::CheckKeySettingApply((CWvsContext *)TSingleton<CWvsContext>::ms_pInstance.m_Data);
+                  }
+                  LOBYTE(v237) = 33;
+                  ZRef<CUtilDlgEx>::~ZRef<CUtilDlgEx>(&pQDlg);
+                  LOBYTE(v237) = 7;
+                  ZXString<char>::~ZXString<char>((ZXString<char> *)&pChatBlockReason);
+                }
+                v99 = TSingleton<CConfig>::ms_pInstance._m_pStr;
+              }
+              *((_DWORD *)v99 + 8) = 0;
+            }
+          }
+        }
+      }
+      v97 = g_pStage.p;
+      if ( g_pStage.p )
+      {
+        if ( g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField)
+          && g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+        {
+          v113 = g_pStage.p;
+          if ( !g_pStage.p || !g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+            v113 = 0;
+          if ( TSecType<unsigned long>::GetData((TSecType<unsigned long> *)&v113[33].vfptr)
+            && bPopupDlg
+            && CUINewYearEventGuide::IsEventTime() )
+          {
+            CUINewYearEventGuide::CUINewYearEventGuide((CUINewYearEventGuide *)&dlg);
+            LOBYTE(v237) = 39;
+            CDialog::DoModal((CDialog *)&dlg.vfptr);
+            LOBYTE(v237) = 7;
+            CUINewYearEventGuide::~CUINewYearEventGuide((CUINewYearEventGuide *)&dlg);
+          }
+        }
+        v97 = g_pStage.p;
+      }
+    }
+    v114 = pCtx;
+    if ( pCtx->m_bPremium )
+    {
+      if ( v97
+        && v97->vfptr->IsKindOf((IUIMsgHandler *)&v97->vfptr, &CField::ms_RTTI_CField)
+        && g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+      {
+        v115 = g_pStage.p;
+        if ( !g_pStage.p || !g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+          v115 = 0;
+        if ( TSecType<unsigned long>::GetData((TSecType<unsigned long> *)&v115[33].vfptr) && bPopupDlg )
+        {
+          CUIPremiumGuide::CUIPremiumGuide(&dlg);
+          LOBYTE(v237) = 40;
+          CDialog::DoModal((CDialog *)&dlg.vfptr);
+          LOBYTE(v237) = 7;
+          CUIPremiumGuide::~CUIPremiumGuide(&dlg);
+        }
+      }
+      v114 = pCtx;
+      CWvsContext::ShowPremiumArgument(pCtx, pCtx->m_ulPremiumArgument, 0);
+    }
+    bPopupDlg = v114->m_nChatBlockReason;
+    if ( bPopupDlg )
+    {
+      v117 = *(_DWORD *)&pCtx->m_dtChatUnblockDate.wDayOfWeek;
+      v118 = *(_DWORD *)&pCtx->m_dtChatUnblockDate.wHour;
+      v119 = *(_DWORD *)&pCtx->m_dtChatUnblockDate.wSecond;
+      *(_DWORD *)&st.wYear = *(_DWORD *)&pCtx->m_dtChatUnblockDate.wYear;
+      v116 = st.wYear;
+      *(_DWORD *)&st.wDayOfWeek = v117;
+      *(_DWORD *)&st.wHour = v118;
+      *(_DWORD *)&st.wSecond = v119;
+      sMsg2._m_pStr = 0;
+      v211 = 5112;
+      LOBYTE(v237) = 41;
+      v120 = StringPool::GetInstance();
+      v121 = StringPool::GetString(v120, (ZXString<char> *)&nFieldHeight, v211)->_m_pStr;
+      v211 = st.wDay;
+      LOBYTE(v237) = 42;
+      ZXString<char>::Format(&sMsg2, v121, v116, st.wMonth, st.wDay);
+      LOBYTE(v237) = 41;
+      if ( nFieldHeight )
+      {
+        v122 = (void *)(nFieldHeight - 12);
+        if ( InterlockedDecrement((volatile LONG *)(nFieldHeight - 12)) <= 0 )
+          ZAllocEx<ZAllocStrSelector<char>>::Free(&ZAllocEx<ZAllocStrSelector<char>>::_s_alloc, v122);
+      }
+      VariantInit((VARIANTARG *)&st);
+      v123 = ZComAPI::ZComVariantCopy((tagVARIANT *)&st, (tagVARIANT *)&vtMissing.0);
+      if ( v123 < 0 )
+        _com_issue_error(v123);
+      LOBYTE(v237) = 43;
+      VariantInit((VARIANTARG *)&result.0);
+      v124 = ZComAPI::ZComVariantCopy((tagVARIANT *)&result.0, (tagVARIANT *)&vtMissing.0);
+      if ( v124 < 0 )
+        _com_issue_error(v124);
+      v211 = (unsigned int)&st;
+      v210 = &result;
+      v209.m_Data = v125;
+      v239.dwHighDateTime = (unsigned int)&v209;
+      LOBYTE(v237) = 44;
+      v126 = StringPool::GetInstance();
+      StringPool::GetBSTR(v126, &v209, 0x13FFu);
+      LOBYTE(v237) = 45;
+      if ( !g_rm.m_pInterface )
+        _com_issue_error(-2147467261);
+      LOBYTE(v237) = 44;
+      v127 = IWzResMan::GetObjectA(g_rm.m_pInterface, &v228, v209, v210, (Ztl_variant_t *)v211);
+      LOBYTE(v237) = 46;
+      v128 = get_unknown(
+               (_com_ptr_t<_com_IIID<IUnknown,&_GUID_00000000_0000_0000_c000_000000000046> > *)&nFieldHeight,
+               v127)->m_pInterface;
+      LOBYTE(v237) = 47;
+      pChatBlockReason.m_pInterface = 0;
+      v239.dwHighDateTime = (unsigned int)&v211;
+      v211 = (unsigned int)v128;
+      if ( v128 )
+      {
+        v129 = (void (*)(void))v128->vfptr->AddRef;
+        v210 = (Ztl_variant_t *)v128;
+        v129();
+      }
+      v130 = _com_ptr_t<_com_IIID<IWzProperty,&__s_GUID const _GUID_986515d9_0a0b_4929_8b4f_718682177b92>>::_QueryInterface<_com_ptr_t<_com_IIID<IUnknown,&__s_GUID const _GUID_00000000_0000_0000_c000_000000000046>>>(
+               &pChatBlockReason,
+               (_com_ptr_t<_com_IIID<IUnknown,&_GUID_00000000_0000_0000_c000_000000000046> >)v210);
+      if ( v130 < 0 && v130 != -2147467262 )
+        _com_issue_error(v130);
+      LOBYTE(v237) = 49;
+      if ( nFieldHeight )
+        (*(void (__cdecl **)(int, unsigned int))(*(_DWORD *)nFieldHeight + 8))(nFieldHeight, v211);
+      LOBYTE(v237) = 50;
+      if ( v228.vt == 8 )
+      {
+        v228.vt = 0;
+        if ( v228.decVal.Lo32 )
+          ZAPI.CoTaskMemFree((void *)(v228.decVal.Lo32 - 4));
+        v131 = (void (__stdcall *)(VARIANTARG *))VariantClear;
+      }
+      else
+      {
+        v131 = (void (__stdcall *)(VARIANTARG *))VariantClear;
+        VariantClear((VARIANTARG *)&v228.0);
+      }
+      LOBYTE(v237) = 51;
+      if ( result.vt == 8 )
+      {
+        result.vt = 0;
+        if ( result.decVal.Lo32 )
+          ZAPI.CoTaskMemFree((void *)(result.decVal.Lo32 - 4));
+      }
+      else
+      {
+        v131((VARIANTARG *)&result.0);
+      }
+      LOBYTE(v237) = 52;
+      if ( st.wYear == 8 )
+      {
+        st.wYear = 0;
+        if ( *(_DWORD *)&st.wHour )
+          ZAPI.CoTaskMemFree((void *)(*(_DWORD *)&st.wHour - 4));
+      }
+      else
+      {
+        v131((VARIANTARG *)&st);
+      }
+      v132 = pChatBlockReason.m_pInterface;
+      if ( pChatBlockReason.m_pInterface )
+      {
+        v133 = alloca(32);
+        v134 = _itow(bPopupDlg, (unsigned __int16 *)&v207, 10);
+        v239.dwHighDateTime = (unsigned int)&v206;
+        _bstr_t::_bstr_t((_bstr_t *)&v206.m_Data, v134);
+        LOBYTE(v237) = 52;
+        v135 = IWzProperty::Getitem(v132, (Ztl_variant_t *)&oPacket.m_aSendBuff, v206);
+        LOBYTE(v237) = 54;
+        v136 = get_unknown(
+                 (_com_ptr_t<_com_IIID<IUnknown,&_GUID_00000000_0000_0000_c000_000000000046> > *)&nFieldWidth,
+                 v135);
+        LOBYTE(v237) = 55;
+        _com_ptr_t<_com_IIID<IWzProperty,&__s_GUID const _GUID_986515d9_0a0b_4929_8b4f_718682177b92>>::_com_ptr_t<_com_IIID<IWzProperty,&__s_GUID const _GUID_986515d9_0a0b_4929_8b4f_718682177b92>>(
+          &pBlockReasonIter,
+          v136);
+        LOBYTE(v237) = 57;
+        if ( nFieldWidth )
+          (*(void (__cdecl **)(int))(*(_DWORD *)nFieldWidth + 8))(nFieldWidth);
+        LOBYTE(v237) = 58;
+        if ( LOWORD(oPacket.m_aSendBuff.a) == 8 )
+        {
+          LOWORD(oPacket.m_aSendBuff.a) = 0;
+          if ( oPacket.m_bTypeHeader1Byte )
+            ZAPI.CoTaskMemFree((void *)(oPacket.m_bTypeHeader1Byte - 4));
+        }
+        else
+        {
+          v131((VARIANTARG *)&oPacket.m_aSendBuff);
+        }
+        sNotifierMessage._m_pStr = 0;
+        v138 = pBlockReasonIter.m_pInterface;
+        LOBYTE(v237) = 59;
+        if ( pBlockReasonIter.m_pInterface )
+        {
+          v205 = v137;
+          v239.dwHighDateTime = (unsigned int)&v205;
+          v139 = StringPool::GetInstance();
+          StringPool::GetBSTR(v139, (Ztl_bstr_t *)&v205, 0xA5Du);
+          LOBYTE(v237) = 59;
+          v140 = IWzProperty::Getitem(v138, (Ztl_variant_t *)&prop, (Ztl_bstr_t)v205);
+          v3 = v140->vt == 8;
+          LOBYTE(v237) = 61;
+          if ( v3 )
+            v141 = v140->bstrVal;
+          else
+            v141 = &sDefault;
+          ZXString<char>::Assign<unsigned short>(&sNotifierMessage, v141, -1);
+          LOBYTE(v237) = 59;
+          if ( LOWORD(prop.pInfo.m_pInterface) == 8 )
+          {
+            LOWORD(prop.pInfo.m_pInterface) = 0;
+            if ( *(_DWORD *)pQDlg.gap0 )
+              ZAPI.CoTaskMemFree((void *)(*(_DWORD *)pQDlg.gap0 - 4));
+          }
+          else
+          {
+            v131((VARIANTARG *)&prop);
+          }
+        }
+        v205 = 0;
+        v204 = 0;
+        v203 = 0;
+        v202 = 1;
+        v201 = 0;
+        v200 = 0;
+        v142 = ZXString<char>::operator+(&sNotifierMessage, (ZXString<char> *)&v239.dwHighDateTime, "\r\n");
+        v199._m_pStr = v143;
+        pQDlg.p = (CUtilDlgEx *)&v199;
+        LOBYTE(v237) = 62;
+        ZXString<char>::operator+(v142, &v199, &sMsg2);
+        CUtilDlg::Notice(v199, v200, v201, v202, v203, (int)v204, v205);
+        LOBYTE(v237) = 59;
+        if ( v239.dwHighDateTime )
+        {
+          v144 = (void *)(v239.dwHighDateTime - 12);
+          if ( InterlockedDecrement((volatile LONG *)(v239.dwHighDateTime - 12)) <= 0 )
+            ZAllocEx<ZAllocStrSelector<char>>::Free(&ZAllocEx<ZAllocStrSelector<char>>::_s_alloc, v144);
+        }
+        LOBYTE(v237) = 58;
+        if ( sNotifierMessage._m_pStr )
+        {
+          v145 = sNotifierMessage._m_pStr - 12;
+          if ( InterlockedDecrement((volatile LONG *)sNotifierMessage._m_pStr - 3) <= 0 )
+            ZAllocEx<ZAllocStrSelector<char>>::Free(&ZAllocEx<ZAllocStrSelector<char>>::_s_alloc, v145);
+        }
+        LOBYTE(v237) = 52;
+        if ( v138 )
+          ((void (__cdecl *)(IWzProperty *))v138->vfptr->Release)(v138);
+      }
+      LOBYTE(v237) = 41;
+      if ( pChatBlockReason.m_pInterface )
+      {
+        v146 = pChatBlockReason.m_pInterface->vfptr;
+        v204 = pChatBlockReason.m_pInterface;
+        ((void (__cdecl *)(IWzProperty *))v146->Release)(pChatBlockReason.m_pInterface);
+      }
+      LOBYTE(v237) = 7;
+      if ( sMsg2._m_pStr )
+      {
+        v147 = sMsg2._m_pStr - 12;
+        if ( InterlockedDecrement((volatile LONG *)sMsg2._m_pStr - 3) <= 0 )
+          ZAllocEx<ZAllocStrSelector<char>>::Free(&ZAllocEx<ZAllocStrSelector<char>>::_s_alloc, v147);
+      }
+    }
+    v148 = pCtx;
+    if ( pCtx->m_bFirstUserLoad )
+    {
+      v149 = Util::FTGetNow();
+      v239.dwHighDateTime = v149.dwHighDateTime;
+      v239.dwLowDateTime = v149.dwLowDateTime;
+      FileTimeToSystemTime(&v239, &st);
+      v150 = (char *)(st.wDay + 100 * (st.wMonth + 100 * st.wYear));
+      if ( (signed int)v150 < (signed int)byte_132DDD6
+        || v150 == byte_132DDD6 && st.wMinute + 100 * st.wHour < 1431 && !TSingleton<CUINoticeFirstAccept>::ms_pInstance )
+      {
+        v151 = (CUtilDlgEx *)ZAllocEx<ZAllocAnonSelector>::Alloc(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, 0xB0u);
+        pQDlg.p = v151;
+        LOBYTE(v237) = 63;
+        if ( v151 )
+          CUINoticeFirstAccept::CUINoticeFirstAccept((CUINoticeFirstAccept *)v151);
+        LOBYTE(v237) = 7;
+      }
+      if ( v148->m_bDirectionMode
+        || v148->m_bInGameDirectionMode
+        || v148->m_bPhantomStealMode
+        || v148->m_bCursorSnipingMode
+        || v148->m_eDarkEffectMode == 2 )
+      {
+        if ( TSingleton<CUINoticeFirstAccept>::ms_pInstance )
+        {
+          CWnd::Destroy((CWnd *)&TSingleton<CUINoticeFirstAccept>::ms_pInstance->vfptr);
+          if ( TSingleton<CUINoticeFirstAccept>::ms_pInstance )
+            ((void (__cdecl *)(signed int))TSingleton<CUINoticeFirstAccept>::ms_pInstance->vfptr->__vecDelDtor)(1);
+        }
+      }
+      v148->m_bFirstUserLoad = 0;
+    }
+    if ( nNotifierCheck )
+    {
+      v152 = 0;
+      sNotifierMessage._m_pStr = 0;
+      ZXString<char>::Assign(&sNotifierMessage, sStrDefault, -1);
+      LOBYTE(v237) = 64;
+      if ( sNotifierTitle._m_pStr )
+        v153 = *((_DWORD *)sNotifierTitle._m_pStr - 1);
+      else
+        v153 = 0;
+      ZXString<char>::_Cat(&sNotifierMessage, sNotifierTitle._m_pStr, v153);
+      ZXString<char>::_Cat(&sNotifierMessage, "\r\n", 2);
+      v154 = nNotifierCheck;
+      if ( nNotifierCheck > 0 )
+      {
+        v155 = asNotifierContent.a;
+        do
+        {
+          ZXString<char>::_Cat(&sNotifierMessage, "\r\n\r\n", 4);
+          v156 = v155[v152]._m_pStr;
+          if ( v156 )
+            v157 = *((_DWORD *)v156 - 1);
+          else
+            v157 = 0;
+          ZXString<char>::_Cat(&sNotifierMessage, v156, v157);
+          ++v152;
+        }
+        while ( v152 < v154 );
+      }
+      if ( !TSingleton<CUIEventAlarm>::ms_pInstance )
+      {
+        v158 = (CUtilDlgEx *)ZAllocEx<ZAllocAnonSelector>::Alloc(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, 0x10Cu);
+        pQDlg.p = v158;
+        LOBYTE(v237) = 65;
+        if ( v158 )
+          CUIEventAlarm::CUIEventAlarm((CUIEventAlarm *)v158);
+        LOBYTE(v237) = 64;
+      }
+      pQDlg.p = (CUtilDlgEx *)&v202;
+      v202 = 0;
+      ZXString<char>::operator=((ZXString<char> *)&v202, &sNotifierMessage);
+      CUIEventAlarm::SetEventAlarm(TSingleton<CUIEventAlarm>::ms_pInstance, (ZXString<char>)v202);
+      CUIEventAlarm::Layout_GEN(TSingleton<CUIEventAlarm>::ms_pInstance);
+      CUIEventAlarm::CreateEventAlarm(TSingleton<CUIEventAlarm>::ms_pInstance);
+      CWndMan::SetFocus(TSingleton<CWndMan>::ms_pInstance, (IUIMsgHandler *)FileTime.dwHighDateTime);
+      LOBYTE(v237) = 7;
+      if ( sNotifierMessage._m_pStr )
+      {
+        v159 = sNotifierMessage._m_pStr - 12;
+        if ( InterlockedDecrement((volatile LONG *)sNotifierMessage._m_pStr - 3) <= 0 )
+          ZAllocEx<ZAllocStrSelector<char>>::Free(&ZAllocEx<ZAllocStrSelector<char>>::_s_alloc, v159);
+      }
+    }
+  }
+  else if ( ((int (__thiscall *)(IWzProperty *, CRTTI *))v77->vfptr[10].AddRef)(v77, &CField::ms_RTTI_CField) )
+  {
+    v160 = (TSecType<unsigned long> *)&pChatBlockReason.m_pInterface[232];
+    if ( !TSecType<unsigned long>::GetData((TSecType<unsigned long> *)&pChatBlockReason.m_pInterface[232]) )
+    {
+      if ( g_pStage.p )
+      {
+        if ( g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+        {
+          if ( g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+          {
+            v161 = get_field();
+            if ( TSecType<unsigned long>::GetData(&v161->m_dwField) == 10000
+              && bPopupDlg
+              && CUINewYearEventGuide::IsEventTime() )
+            {
+              CUINewYearEventGuide::CUINewYearEventGuide((CUINewYearEventGuide *)&dlg);
+              LOBYTE(v237) = 66;
+              CDialog::DoModal((CDialog *)&dlg.vfptr);
+              LOBYTE(v237) = 7;
+              CUINewYearEventGuide::~CUINewYearEventGuide((CUINewYearEventGuide *)&dlg);
+            }
+          }
+        }
+      }
+    }
+    v162 = pCtx;
+    if ( pCtx->m_bPremium )
+    {
+      if ( !TSecType<unsigned long>::GetData(v160) )
+      {
+        if ( g_pStage.p )
+        {
+          if ( g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+          {
+            if ( g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+            {
+              v163 = get_field();
+              if ( TSecType<unsigned long>::GetData(&v163->m_dwField) == 10000 && bPopupDlg )
+              {
+                CUIPremiumGuide::CUIPremiumGuide(&dlg);
+                LOBYTE(v237) = 67;
+                CDialog::DoModal((CDialog *)&dlg.vfptr);
+                LOBYTE(v237) = 7;
+                CUIPremiumGuide::~CUIPremiumGuide(&dlg);
+              }
+            }
+          }
+        }
+      }
+    }
+    if ( v162->m_bFirstUserLoad )
+    {
+      v164 = Util::FTGetNow();
+      FileTime.dwHighDateTime = v164.dwHighDateTime;
+      FileTime.dwLowDateTime = v164.dwLowDateTime;
+      FileTimeToSystemTime(&FileTime, &st);
+      v165 = (char *)(st.wDay + 100 * (st.wMonth + 100 * st.wYear));
+      if ( (signed int)v165 < (signed int)byte_132DDD6
+        || v165 == byte_132DDD6 && st.wMinute + 100 * st.wHour < 1431 && !TSingleton<CUINoticeFirstAccept>::ms_pInstance )
+      {
+        v166 = (CUtilDlgEx *)ZAllocEx<ZAllocAnonSelector>::Alloc(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, 0xB0u);
+        pQDlg.p = v166;
+        LOBYTE(v237) = 68;
+        if ( v166 )
+          CUINoticeFirstAccept::CUINoticeFirstAccept((CUINoticeFirstAccept *)v166);
+        LOBYTE(v237) = 7;
+      }
+      if ( v162->m_bDirectionMode || v162->m_bInGameDirectionMode || !CWvsContext::IsEnableUI_Mode(v162) )
+      {
+        if ( TSingleton<CUINoticeFirstAccept>::ms_pInstance )
+        {
+          CWnd::Destroy((CWnd *)&TSingleton<CUINoticeFirstAccept>::ms_pInstance->vfptr);
+          if ( TSingleton<CUINoticeFirstAccept>::ms_pInstance )
+            ((void (__cdecl *)(signed int))TSingleton<CUINoticeFirstAccept>::ms_pInstance->vfptr->__vecDelDtor)(1);
+        }
+      }
+      v162->m_bFirstUserLoad = 0;
+    }
+  }
+  v167 = pCtx;
+  v214 = 0;
+  v168 = CWvsContext::GetTempStatView(pCtx);
+  CTemporaryStatView::SetMultiLine(v168, v214);
+  v214 = 0;
+  v169 = CWvsContext::GetTempStatView(v167);
+  CTemporaryStatView::SetOffsetY(v169, v214);
+  if ( bCharacterData )
+    CWvsContext::CheckNewQuestAvailable(v167, 1, 0);
+  if ( !g_pStage.p || !g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+    goto LABEL_507;
+  v170 = g_pStage.p;
+  if ( !g_pStage.p || !g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+    v170 = 0;
+  if ( v170[43].vfptr )
+    v171 = 1;
+  else
+LABEL_507:
+    v171 = 0;
+  if ( TSingleton<CUIStatusBar>::ms_pInstance && v171 != TSingleton<CUIStatusBar>::ms_pInstance->m_bStarPlanet )
+  {
+    CWnd::Destroy((CWnd *)&TSingleton<CUIStatusBar>::ms_pInstance->vfptr);
+    if ( TSingleton<CUIStatusBar>::ms_pInstance )
+      ((void (__cdecl *)(signed int))TSingleton<CUIStatusBar>::ms_pInstance->vfptr->__vecDelDtor)(1);
+    TSingleton<CUIStatusBar>::CreateInstance();
+  }
+  if ( !bCanNotifyAnnouncedQuest )
+    CWvsContext::ClearAnnouncedQuest(v167);
+  if ( TSingleton<CUIMiniMap>::ms_pInstance.m_pInterface
+    && g_pStage.p
+    && g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+  {
+    v172 = g_pStage.p;
+    if ( !g_pStage.p || !g_pStage.p->vfptr->IsKindOf((IUIMsgHandler *)&g_pStage.p->vfptr, &CField::ms_RTTI_CField) )
+      v172 = 0;
+    CUIMiniMap::AutoExpandUI(
+      (CUIMiniMap *)TSingleton<CUIMiniMap>::ms_pInstance.m_pInterface,
+      ((_DWORD)v172[33]._m_pPrev >> 27) & 1);
+  }
+  CWvsContext::SendPartyInvitableSet(v167);
+  v173 = v167->m_pCharacterData.p;
+  if ( v173 )
+  {
+    v211 = v173->characterStat._ZtlSecureTear_nJob_CS;
+    v174 = _ZtlSecureFuse<short>(v173->characterStat._ZtlSecureTear_nJob, v211);
+    if ( (signed __int16)v174 == 3101 || v174 == 3120 || v174 == 3121 || v174 == 3122 )
+    {
+      COutPacket::COutPacket(&oPacket, 425);
+      LOBYTE(v237) = 69;
+      if ( TSingleton<CClientSocket>::ms_pInstance._m_pStr )
+        CClientSocket::SendPacket(&oPacket);
+      LOBYTE(v237) = 7;
+      if ( oPacket.m_aSendBuff.a )
+        ZAllocEx<ZAllocAnonSelector>::Free(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, oPacket.m_aSendBuff.a - 4);
+    }
+  }
+  CWvsContext::CheckEnterFieldOnStraightQuest(v167);
+  if ( !TSingleton<CUIMonsterBattle>::ms_pInstance && !TSingleton<CUIMonsterBattleMatchResultMinimize>::ms_pInstance )
+    v167->m_bMBPossibleCombat = 1;
+  v175 = CWvsContext::GetFollowTarget(v167, (ZXString<char> *)&bCanNotifyAnnouncedQuest)->_m_pStr;
+  v176 = v175 && *v175 && v167->m_nChannelID != nOldChannelID;
+  if ( bCanNotifyAnnouncedQuest )
+  {
+    v177 = (void *)(bCanNotifyAnnouncedQuest - 12);
+    if ( InterlockedDecrement((volatile LONG *)(bCanNotifyAnnouncedQuest - 12)) <= 0 )
+      ZAllocEx<ZAllocStrSelector<char>>::Free(&ZAllocEx<ZAllocStrSelector<char>>::_s_alloc, v177);
+  }
+  if ( v176 )
+  {
+    COutPacket::COutPacket(&oPacket, 389);
+    v178 = (unsigned int)oPacket.m_aSendBuff.a;
+    LOBYTE(v237) = 70;
+    if ( oPacket.m_aSendBuff.a )
+      v179 = *((_DWORD *)oPacket.m_aSendBuff.a - 1);
+    else
+      v179 = 0;
+    if ( oPacket.m_uOffset + 1 > v179 )
+    {
+      if ( oPacket.m_aSendBuff.a )
+        v178 = *((_DWORD *)oPacket.m_aSendBuff.a - 1);
+      do
+        v178 *= 2;
+      while ( oPacket.m_uOffset + 1 > v178 );
+      ZArray<unsigned char>::_Realloc(&oPacket.m_aSendBuff, v178, 0, (ZAllocHelper *)&bPopupDlg);
+      v178 = (unsigned int)oPacket.m_aSendBuff.a;
+    }
+    v210 = (Ztl_variant_t *)oPacket.m_uOffset;
+    *(_BYTE *)(v178 + oPacket.m_uOffset++) = 58;
+    pQDlg.p = (CUtilDlgEx *)&v210;
+    CWvsContext::GetFollowTarget(v167, (ZXString<char> *)&v210);
+    COutPacket::EncodeStr(&oPacket, (ZXString<char>)v210);
+    v180 = (unsigned int)oPacket.m_aSendBuff.a;
+    v181 = v167->m_nChannelID;
+    if ( oPacket.m_aSendBuff.a )
+      v182 = *((_DWORD *)oPacket.m_aSendBuff.a - 1);
+    else
+      v182 = 0;
+    if ( oPacket.m_uOffset + 4 > v182 )
+    {
+      if ( oPacket.m_aSendBuff.a )
+        v180 = *((_DWORD *)oPacket.m_aSendBuff.a - 1);
+      do
+        v180 *= 2;
+      while ( oPacket.m_uOffset + 4 > v180 );
+      ZArray<unsigned char>::_Realloc(&oPacket.m_aSendBuff, v180, 0, (ZAllocHelper *)&bPopupDlg);
+      v180 = (unsigned int)oPacket.m_aSendBuff.a;
+    }
+    *(_DWORD *)(v180 + oPacket.m_uOffset) = v181;
+    oPacket.m_uOffset += 4;
+    v183 = get_update_time();
+    v184 = (unsigned int)oPacket.m_aSendBuff.a;
+    if ( oPacket.m_aSendBuff.a )
+      v185 = *((_DWORD *)oPacket.m_aSendBuff.a - 1);
+    else
+      v185 = 0;
+    if ( oPacket.m_uOffset + 4 > v185 )
+    {
+      if ( oPacket.m_aSendBuff.a )
+        v184 = *((_DWORD *)oPacket.m_aSendBuff.a - 1);
+      do
+        v184 *= 2;
+      while ( oPacket.m_uOffset + 4 > v184 );
+      ZArray<unsigned char>::_Realloc(&oPacket.m_aSendBuff, v184, 0, (ZAllocHelper *)&bPopupDlg);
+      v184 = (unsigned int)oPacket.m_aSendBuff.a;
+    }
+    *(_DWORD *)(v184 + oPacket.m_uOffset) = v183;
+    oPacket.m_uOffset += 4;
+    v210 = (Ztl_variant_t *)TSingleton<CSecurityClient>::ms_pInstance->_ZtlSecureTear_m_usSeq_CS;
+    v186 = _ZtlSecureFuse<unsigned short>(
+             TSingleton<CSecurityClient>::ms_pInstance->_ZtlSecureTear_m_usSeq,
+             (unsigned int)v210);
+    v187 = (unsigned int)oPacket.m_aSendBuff.a;
+    if ( oPacket.m_aSendBuff.a )
+      v188 = *((_DWORD *)oPacket.m_aSendBuff.a - 1);
+    else
+      v188 = 0;
+    if ( oPacket.m_uOffset + 2 > v188 )
+    {
+      if ( oPacket.m_aSendBuff.a )
+        v187 = *((_DWORD *)oPacket.m_aSendBuff.a - 1);
+      do
+        v187 *= 2;
+      while ( oPacket.m_uOffset + 2 > v187 );
+      ZArray<unsigned char>::_Realloc(&oPacket.m_aSendBuff, v187, 0, (ZAllocHelper *)&bPopupDlg);
+      v187 = (unsigned int)oPacket.m_aSendBuff.a;
+    }
+    *(_WORD *)(v187 + oPacket.m_uOffset) = v186;
+    oPacket.m_uOffset += 2;
+    v189 = TSingleton<CSecurityClient>::ms_pInstance->_ZtlSecureTear_m_dwPos[0];
+    v190 = v189 ^ __ROL4__(TSingleton<CSecurityClient>::ms_pInstance->_ZtlSecureTear_m_dwPos[1], 5);
+    if ( TSingleton<CSecurityClient>::ms_pInstance->_ZtlSecureTear_m_dwPos[1] + __ROR4__(v189 ^ 0xBAADF00D, 5) != TSingleton<CSecurityClient>::ms_pInstance->_ZtlSecureTear_m_dwPos_CS )
+    {
+      *(_DWORD *)pQDlg.gap0 = 5;
+      pQDlg.p = (CUtilDlgEx *)pCharacterData.p;
+      _CxxThrowException(&pQDlg, &_TI1_AVZException__);
+    }
+    v191 = (unsigned int)oPacket.m_aSendBuff.a;
+    if ( oPacket.m_aSendBuff.a )
+      v192 = *((_DWORD *)oPacket.m_aSendBuff.a - 1);
+    else
+      v192 = 0;
+    if ( oPacket.m_uOffset + 4 > v192 )
+    {
+      if ( oPacket.m_aSendBuff.a )
+        v191 = *((_DWORD *)oPacket.m_aSendBuff.a - 1);
+      do
+        v191 *= 2;
+      while ( oPacket.m_uOffset + 4 > v191 );
+      ZArray<unsigned char>::_Realloc(&oPacket.m_aSendBuff, v191, 0, (ZAllocHelper *)&bPopupDlg);
+      v191 = (unsigned int)oPacket.m_aSendBuff.a;
+    }
+    *(_DWORD *)(v191 + oPacket.m_uOffset) = v190;
+    oPacket.m_uOffset += 4;
+    if ( TSingleton<CClientSocket>::ms_pInstance._m_pStr )
+      CClientSocket::SendPacket(&oPacket);
+    CWvsContext::SetExclRequestSent(v167, 1);
+    LOBYTE(v237) = 7;
+    if ( oPacket.m_aSendBuff.a )
+    {
+      ZAllocEx<ZAllocAnonSelector>::Free(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, oPacket.m_aSendBuff.a - 4);
+      oPacket.m_aSendBuff.a = 0;
+    }
+  }
+  v193 = v167->m_sFollowTarget._m_pStr;
+  if ( v193 )
+  {
+    v194 = v193 - 12;
+    if ( InterlockedDecrement((volatile LONG *)v193 - 3) <= 0 )
+      ZAllocEx<ZAllocStrSelector<char>>::Free(&ZAllocEx<ZAllocStrSelector<char>>::_s_alloc, v194);
+    v167->m_sFollowTarget._m_pStr = 0;
+  }
+  if ( TSingleton<CUITowerResult>::ms_pInstance )
+  {
+    CWnd::Destroy((CWnd *)&TSingleton<CUITowerResult>::ms_pInstance->vfptr);
+    if ( TSingleton<CUITowerResult>::ms_pInstance )
+      TSingleton<CUITowerResult>::ms_pInstance->vfptr->__vecDelDtor(&TSingleton<CUITowerResult>::ms_pInstance->vfptr, 1);
+  }
+  if ( TSingleton<CUIUrusEnterParty>::ms_pInstance )
+    CWvsContext::UI_Close((CWvsContext *)TSingleton<CWvsContext>::ms_pInstance.m_Data, 295);
+  if ( TSingleton<CUIUrusResult>::ms_pInstance )
+  {
+    CWnd::Destroy((CWnd *)&TSingleton<CUIUrusResult>::ms_pInstance->vfptr);
+    if ( TSingleton<CUIUrusResult>::ms_pInstance )
+      TSingleton<CUIUrusResult>::ms_pInstance->vfptr->__vecDelDtor(&TSingleton<CUIUrusResult>::ms_pInstance->vfptr, 1);
+  }
+  if ( TSingleton<CUITradeKingInven>::ms_pInstance )
+  {
+    CWnd::Destroy((CWnd *)&TSingleton<CUITradeKingInven>::ms_pInstance->vfptr);
+    if ( TSingleton<CUITradeKingInven>::ms_pInstance )
+      TSingleton<CUITradeKingInven>::ms_pInstance->vfptr->__vecDelDtor(
+        &TSingleton<CUITradeKingInven>::ms_pInstance->vfptr,
+        1);
+  }
+  if ( TSingleton<CUIFieldDebuffStack>::ms_pInstance )
+  {
+    CWnd::Destroy((CWnd *)&TSingleton<CUIFieldDebuffStack>::ms_pInstance->vfptr);
+    if ( TSingleton<CUIFieldDebuffStack>::ms_pInstance )
+      TSingleton<CUIFieldDebuffStack>::ms_pInstance->vfptr->__vecDelDtor(
+        &TSingleton<CUIFieldDebuffStack>::ms_pInstance->vfptr,
+        1);
+  }
+  LOBYTE(v237) = 4;
+  CField::INITPARAM::~INITPARAM(&paramFieldInit);
+  LOBYTE(v237) = 1;
+  if ( pCharacterData.p )
+  {
+    v195 = (char *)&pCharacterData.p[-1].m_nBlockReason;
+    v196 = &pCharacterData.p[-1].m_nBlockDay;
+    v208 = &pCharacterData.p[-1].m_nBlockDay;
+    if ( !InterlockedDecrement(v208) )
+    {
+      InterlockedIncrement(v196);
+      if ( v195 )
+        (**(void (__thiscall ***)(char *, signed int))v195)(v195, 1);
+    }
+  }
+  LOBYTE(v237) = 0;
+  if ( asNotifierContent.a )
+  {
+    v197 = asNotifierContent.a - 1;
+    ZArray<ZXString<char>>::_Destroy(asNotifierContent.a, &asNotifierContent.a[(_DWORD)asNotifierContent.a[-1]._m_pStr]);
+    ZAllocEx<ZAllocAnonSelector>::Free(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, v197);
+  }
+  v237 = -1;
+  if ( sNotifierTitle._m_pStr )
+  {
+    v198 = sNotifierTitle._m_pStr - 12;
+    if ( InterlockedDecrement((volatile LONG *)sNotifierTitle._m_pStr - 3) <= 0 )
+      ZAllocEx<ZAllocStrSelector<char>>::Free(&ZAllocEx<ZAllocStrSelector<char>>::_s_alloc, v198);
+  }
+}

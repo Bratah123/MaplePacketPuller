@@ -1,0 +1,8 @@
+void __thiscall CWvsContext::OnSetMaplePoint(CWvsContext *this, CInPacket *iPacket)
+{
+  CWvsContext *v2; // esi
+
+  v2 = this;
+  this->m_nMaplePoint = CInPacket::Decode4(iPacket);
+  CWvsContext::ValidateStat(v2, 0, 0);
+}

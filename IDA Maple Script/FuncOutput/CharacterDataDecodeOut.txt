@@ -1,0 +1,684 @@
+unsigned __int64 __thiscall CharacterData::Decode(CharacterData *this, CInPacket *iPacket, int bBackwardUpdate)
+CharacterData::Decode()
+CInPacket::DecodeBuffer()
+CInPacket::Decode1()
+do:
+  CInPacket::Decode4()
+while()
+CInPacket::Decode1()
+if :
+  do:
+     CInPacket::Decode4()
+  while()
+do:
+  CInPacket::Decode4()
+while()
+CInPacket::Decode4()
+if :
+  do:
+     CInPacket::Decode4()
+     CInPacket::DecodeBuffer()
+  while()
+do:
+  CInPacket::Decode4()
+  CInPacket::DecodeBuffer()
+while()
+CInPacket::Decode1()
+if :
+  CInPacket::Decode1()
+  CInPacket::Decode4()
+  do:
+     CInPacket::DecodeBuffer()
+  while()
+  CInPacket::Decode4()
+  do:
+     CInPacket::DecodeBuffer()
+  while()
+CInPacket::Decode1()
+CInPacket::Decode4()
+do:
+  CInPacket::DecodeBuffer()
+while()
+CInPacket::Decode4()
+do:
+  CInPacket::DecodeBuffer()
+while()
+if :
+  GW_CharacterStat::Decode()
+  CInPacket::Decode1()
+  CInPacket::Decode1()
+  CInPacket::DecodeStr()
+  CInPacket::Decode1()
+  CInPacket::DecodeStr()
+  CInPacket::Decode1()
+  CInPacket::DecodeStr()
+GW_CharacterStat::Decode()
+CInPacket::Decode1()
+CInPacket::Decode1()
+CInPacket::DecodeStr()
+CInPacket::Decode1()
+CInPacket::DecodeStr()
+CInPacket::Decode1()
+CInPacket::DecodeStr()
+if :
+  CInPacket::Decode8()
+CInPacket::Decode8()
+if :
+  CInPacket::Decode4()
+  do:
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+     CInPacket::Decode8()
+  while()
+CInPacket::Decode4()
+do:
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+  CInPacket::Decode8()
+while()
+if :
+  CInPacket::Decode4()
+  do:
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+     CInPacket::Decode1()
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+  while()
+  CInPacket::Decode4()
+  do:
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+  while()
+  CInPacket::Decode4()
+  do:
+     CInPacket::Decode4()
+  while()
+  CInPacket::Decode1()
+  GW_MonsterBattleLadder_UserInfo::Decode()
+  CInPacket::Decode1()
+  do:
+     GW_MonsterBattleRankInfo::Decode()
+  while()
+  CInPacket::Decode1()
+  do:
+     GW_MonsterBattleRankInfo::Decode()
+  while()
+CInPacket::Decode4()
+do:
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+  CInPacket::Decode1()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+while()
+CInPacket::Decode4()
+do:
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+while()
+CInPacket::Decode4()
+do:
+  CInPacket::Decode4()
+while()
+CInPacket::Decode1()
+GW_MonsterBattleLadder_UserInfo::Decode()
+CInPacket::Decode1()
+do:
+  GW_MonsterBattleRankInfo::Decode()
+while()
+CInPacket::Decode1()
+do:
+  GW_MonsterBattleRankInfo::Decode()
+while()
+if :
+  while()
+  while()
+  while()
+  do:
+   
+   
+  while()
+while()
+while()
+while()
+do:
+  
+  
+while()
+do:
+  CInPacket::Decode1()
+while()
+if :
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+CInPacket::Decode4()
+CInPacket::Decode4()
+if :
+  CInPacket::Decode1()
+  CInPacket::Decode2()
+  while()
+  ItemSlotBase::Decode()
+  CInPacket::Decode2()
+  CInPacket::Decode2()
+  do:
+     ItemSlotBase::Decode()
+     CInPacket::Decode2()
+  while()
+  CInPacket::Decode2()
+  do:
+     ItemSlotBase::Decode()
+     CInPacket::Decode2()
+  while()
+  NonBPEquip::Decode()
+  VirtualEquipInventory::Decode()
+CInPacket::Decode1()
+CInPacket::Decode2()
+while()
+ItemSlotBase::Decode()
+CInPacket::Decode2()
+CInPacket::Decode2()
+do:
+  ItemSlotBase::Decode()
+  CInPacket::Decode2()
+while()
+CInPacket::Decode2()
+do:
+  ItemSlotBase::Decode()
+  CInPacket::Decode2()
+while()
+NonBPEquip::Decode()
+VirtualEquipInventory::Decode()
+do:
+  CInPacket::Decode1()
+  do:
+     ItemSlotBase::Decode()
+     CInPacket::Decode1()
+   while()
+   while()
+   
+   
+   do:
+   CInPacket::Decode4()
+   do:
+   CInPacket::Decode4()
+   BagData::Decode()
+   while()
+   while()
+   if :
+     CInPacket::Decode4()
+     do:
+     CInPacket::Decode4()
+     CInPacket::DecodeBuffer()
+  while()
+CInPacket::Decode4()
+do:
+  CInPacket::Decode4()
+  CInPacket::DecodeBuffer()
+while()
+if :
+  CInPacket::Decode4()
+  do:
+     CInPacket::DecodeBuffer()
+     CInPacket::DecodeBuffer()
+  while()
+CInPacket::Decode4()
+do:
+  CInPacket::DecodeBuffer()
+  CInPacket::DecodeBuffer()
+while()
+if :
+  CInPacket::Decode1()
+  do:
+     ItemPotSlot::Decode()
+     CInPacket::Decode1()
+  while()
+CInPacket::Decode1()
+do:
+  ItemPotSlot::Decode()
+  CInPacket::Decode1()
+while()
+if :
+  CInPacket::Decode1()
+  CInPacket::Decode2()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+  CInPacket::DecodeBuffer()
+  CInPacket::Decode4()
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode4()
+     CInPacket::Decode2()
+  while()
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+  while()
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode4()
+  while()
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode4()
+     CInPacket::DecodeBuffer()
+  while()
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode4()
+  while()
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+  while()
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode4()
+  while()
+CInPacket::Decode1()
+CInPacket::Decode2()
+CInPacket::Decode4()
+CInPacket::Decode4()
+CInPacket::DecodeBuffer()
+CInPacket::Decode4()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode4()
+  CInPacket::Decode2()
+while()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+while()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode4()
+while()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode4()
+  CInPacket::DecodeBuffer()
+while()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode4()
+while()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+while()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode4()
+while()
+if :
+  CInPacket::Decode2()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+CInPacket::Decode2()
+CInPacket::Decode4()
+CInPacket::Decode4()
+if :
+  CInPacket::Decode1()
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode4()
+     CInPacket::DecodeStr()
+  while()
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode4()
+  while()
+CInPacket::Decode1()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode4()
+  CInPacket::DecodeStr()
+while()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode4()
+while()
+if :
+  CInPacket::Decode1()
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode4()
+     CInPacket::DecodeBuffer()
+  while()
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode4()
+  while()
+CInPacket::Decode1()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode4()
+  CInPacket::DecodeBuffer()
+while()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode4()
+while()
+if :
+  CInPacket::Decode2()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+CInPacket::Decode2()
+CInPacket::Decode4()
+CInPacket::Decode4()
+CInPacket::Decode4()
+CInPacket::Decode4()
+CInPacket::Decode4()
+if :
+  CInPacket::Decode2()
+  CInPacket::DecodeBuffer()
+  CInPacket::Decode2()
+  CInPacket::DecodeBuffer()
+  CInPacket::Decode2()
+  CInPacket::DecodeBuffer()
+  CInPacket::Decode2()
+  CInPacket::DecodeBuffer()
+  CInPacket::Decode2()
+  CInPacket::DecodeBuffer()
+  CInPacket::Decode2()
+  CInPacket::DecodeBuffer()
+CInPacket::Decode2()
+CInPacket::DecodeBuffer()
+CInPacket::Decode2()
+CInPacket::DecodeBuffer()
+CInPacket::Decode2()
+CInPacket::DecodeBuffer()
+CInPacket::Decode2()
+CInPacket::DecodeBuffer()
+CInPacket::Decode2()
+CInPacket::DecodeBuffer()
+CInPacket::Decode2()
+CInPacket::DecodeBuffer()
+if :
+  do:
+     CInPacket::Decode4()
+  while()
+  do:
+     CInPacket::Decode4()
+  while()
+  do:
+     CInPacket::Decode4()
+  while()
+do:
+  CInPacket::Decode4()
+while()
+do:
+  CInPacket::Decode4()
+while()
+do:
+  CInPacket::Decode4()
+while()
+if :
+  while()
+  do:
+   
+   
+   
+   
+  while()
+  while()
+while()
+do:
+  
+  
+  
+  
+while()
+while()
+if :
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode4()
+     CInPacket::DecodeStr()
+  while()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode4()
+  CInPacket::DecodeStr()
+while()
+if :
+  CInPacket::Decode2()
+  CInPacket::Decode4()
+  AvatarLook::Decode()
+CInPacket::Decode2()
+CInPacket::Decode4()
+AvatarLook::Decode()
+CInPacket::Decode1()
+if :
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+  CInPacket::DecodeStr()
+CInPacket::Decode4()
+CInPacket::Decode4()
+CInPacket::DecodeStr()
+if :
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+CInPacket::Decode4()
+CInPacket::Decode4()
+CInPacket::Decode4()
+if :
+  WildHunterInfo::Decode()
+WildHunterInfo::Decode()
+if :
+  ZeroInfo::Decode()
+ZeroInfo::Decode()
+if :
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode2()
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+     CInPacket::Decode2()
+     CInPacket::Decode4()
+     CInPacket::Decode2()
+     CInPacket::DecodeBuffer()
+     CInPacket::Decode4()
+     CInPacket::Decode2()
+     CInPacket::Decode4()
+     CInPacket::Decode2()
+     CInPacket::DecodeBuffer()
+  while()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode2()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+  CInPacket::Decode2()
+  CInPacket::Decode4()
+  CInPacket::Decode2()
+  CInPacket::DecodeBuffer()
+  CInPacket::Decode4()
+  CInPacket::Decode2()
+  CInPacket::Decode4()
+  CInPacket::Decode2()
+  CInPacket::DecodeBuffer()
+while()
+if :
+  do:
+     do:
+     CInPacket::Decode4()
+  while()
+  while()
+do:
+  do:
+     CInPacket::Decode4()
+   while()
+   while()
+   if :
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+   CInPacket::Decode4()
+   CInPacket::Decode4()
+   CInPacket::Decode4()
+   CInPacket::Decode4()
+   CInPacket::Decode4()
+   if :
+     CInPacket::Decode2()
+     do:
+     CInPacket::Decode1()
+     CInPacket::Decode4()
+     CInPacket::Decode1()
+     CInPacket::Decode1()
+  while()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode1()
+  CInPacket::Decode4()
+  CInPacket::Decode1()
+  CInPacket::Decode1()
+while()
+if :
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+  while()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+while()
+CInPacket::Decode4()
+if :
+  do:
+     CInPacket::DecodeStr()
+     InviteInfo::DecodeMonsterLifeInviteInfo()
+  while()
+do:
+  CInPacket::DecodeStr()
+  InviteInfo::DecodeMonsterLifeInviteInfo()
+while()
+CInPacket::Decode1()
+if :
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+CInPacket::Decode4()
+CInPacket::Decode4()
+if :
+  CInPacket::Decode1()
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode2()
+     CInPacket::Decode2()
+     do:
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+  while()
+  while()
+  CInPacket::Decode2()
+  CInPacket::Decode2()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+CInPacket::Decode1()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode2()
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+   while()
+   while()
+   CInPacket::Decode2()
+   CInPacket::Decode2()
+   CInPacket::Decode4()
+   CInPacket::Decode4()
+   ReturnEffectInfo::Decode()
+   DressUpInfo::Decode()
+   if :
+   
+   
+   
+   
+     CInPacket::Decode2()
+     do:
+     CInPacket::Decode2()
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+  while()
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode2()
+     CInPacket::Decode4()
+     CInPacket::Decode4()
+  while()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode2()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+while()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode2()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+while()
+FarmPotential::Decode()
+if :
+  FarmUserInfo::Decode()
+  CInPacket::Decode4()
+  CInPacket::Decode4()
+FarmUserInfo::Decode()
+CInPacket::Decode4()
+CInPacket::Decode4()
+MemorialCubeInfo::Decode()
+if :
+  CInPacket::Decode4()
+  CInPacket::DecodeBuffer()
+  CInPacket::Decode4()
+CInPacket::Decode4()
+CInPacket::DecodeBuffer()
+CInPacket::Decode4()
+RunnerGameRecord::Decode()
+CInPacket::Decode2()
+if :
+  do:
+     CInPacket::Decode4()
+     CInPacket::DecodeStr()
+  while()
+do:
+  CInPacket::Decode4()
+  CInPacket::DecodeStr()
+while()
+if :
+  CInPacket::Decode2()
+  do:
+     CInPacket::Decode4()
+     CInPacket::DecodeStr()
+  while()
+CInPacket::Decode2()
+do:
+  CInPacket::Decode4()
+  CInPacket::DecodeStr()
+while()
+CInPacket::Decode1()
+CharacterData::Decode()

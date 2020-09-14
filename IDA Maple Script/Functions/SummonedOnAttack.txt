@@ -1,0 +1,856 @@
+void __thiscall CSummoned::OnAttack(CSummoned *this, CInPacket *iPacket)
+{
+  CSummoned *v2; // esi
+  char *v3; // eax
+  unsigned __int8 v4; // al
+  unsigned __int8 v5; // di
+  char *v6; // eax
+  unsigned __int8 v7; // al
+  signed int v8; // edi
+  unsigned int v9; // eax
+  unsigned __int8 v10; // al
+  bool v11; // zf
+  int v12; // ecx
+  int v13; // ebp
+  unsigned int *v14; // edi
+  unsigned int v15; // eax
+  unsigned __int8 v16; // al
+  int v17; // edi
+  __int16 v18; // ax
+  ATTACKINFO *v19; // ecx
+  ATTACKINFO *v20; // ebp
+  unsigned int v21; // ecx
+  ZMap<unsigned long,__POSITION *,unsigned long>::_PAIR **v22; // edi
+  ZMap<unsigned long,__POSITION *,unsigned long>::_PAIR *v23; // edx
+  tagPOINT *v24; // eax
+  CMinion *v25; // edi
+  CMinion *v26; // eax
+  _bstr_t::Data_t *v27; // ebx
+  int v28; // eax
+  ATTACKINFO *v29; // eax
+  HitPartsProcessor **v30; // esi
+  int v31; // eax
+  int v32; // ecx
+  int v33; // edi
+  int v34; // eax
+  IUnknown *v35; // ebx
+  HRESULT v36; // eax
+  int v37; // eax
+  int v38; // eax
+  int v39; // eax
+  IUnknown *v40; // ebx
+  int (__stdcall *v41)(IUnknown *, int *); // eax
+  IUnknown *v42; // ebx
+  HRESULT v43; // eax
+  int v44; // eax
+  IUnknown *v45; // edi
+  int (__stdcall *v46)(IUnknown *, int *); // eax
+  IUnknown *v47; // edi
+  HRESULT v48; // eax
+  IWzVector2D *v49; // eax
+  CVecCtrl *v50; // edi
+  int v51; // ecx
+  int v52; // edi
+  unsigned int v53; // eax
+  int v54; // ecx
+  int v55; // eax
+  char *v56; // ecx
+  int v57; // ecx
+  int v58; // edi
+  signed int v59; // ecx
+  SummonedAttackInfo *v60; // edi
+  volatile LONG *v61; // ebx
+  volatile LONG **v62; // ebp
+  volatile LONG *v63; // edi
+  int v64; // edx
+  _bstr_t::Data_t *v65; // ecx
+  char *v66; // eax
+  tagPOINT (__thiscall *v67)(IVecCtrlOwner *); // edx
+  int *v68; // eax
+  tagPOINT (__thiscall *v69)(IVecCtrlOwner *); // edx
+  int v70; // eax
+  int v71; // edx
+  ATTACKINFO *v72; // eax
+  int *j; // edi
+  _DWORD *v74; // ebx
+  int (__thiscall *v75)(_DWORD *, char *); // eax
+  _DWORD *v76; // ebp
+  _DWORD *v77; // eax
+  int v78; // ecx
+  int v79; // ebx
+  int v80; // ecx
+  int v81; // eax
+  int v82; // ecx
+  bool v83; // sf
+  unsigned __int8 v84; // of
+  int v85; // ecx
+  int v86; // eax
+  long double v87; // st7
+  long double v88; // st7
+  long double v89; // st6
+  long double v90; // st7
+  int v91; // eax
+  signed int v92; // edx
+  void **v93; // ebx
+  void **v94; // ebx
+  int v95; // ebx
+  int *v96; // ebp
+  int v97; // ecx
+  char *v98; // eax
+  int v99; // ecx
+  unsigned int v100; // ebx
+  int v101; // eax
+  int v102; // edx
+  int v103; // ebp
+  int v104; // ebx
+  _bstr_t::Data_t *v105; // ebx
+  _bstr_t::Data_t *v106; // ebx
+  void *v107; // eax
+  unsigned int v108; // eax
+  int v109; // ecx
+  char *v110; // eax
+  unsigned int v111; // eax
+  int v112; // ecx
+  IWzVector2D *v113; // eax
+  int v114; // edi
+  int v115; // eax
+  unsigned int v116; // edx
+  int v117; // esi
+  _bstr_t::Data_t *v118; // [esp-14h] [ebp-160h]
+  int v119; // [esp-10h] [ebp-15Ch]
+  BOOL v120; // [esp-Ch] [ebp-158h]
+  int v121; // [esp-8h] [ebp-154h]
+  int v122; // [esp-4h] [ebp-150h]
+  __int64 v123; // [esp+0h] [ebp-14Ch]
+  __int64 v124; // [esp+8h] [ebp-144h]
+  BOOL v125; // [esp+10h] [ebp-13Ch]
+  _bstr_t::Data_t *v126; // [esp+14h] [ebp-138h]
+  HitPartsProcessor *v127; // [esp+18h] [ebp-134h]
+  int v128; // [esp+1Ch] [ebp-130h]
+  ATTACKINFO *v129; // [esp+20h] [ebp-12Ch]
+  int i; // [esp+38h] [ebp-114h]
+  int nY; // [esp+3Ch] [ebp-110h]
+  Ztl_bstr_t sBallUOL; // [esp+40h] [ebp-10Ch]
+  tagPOINT pt0; // [esp+44h] [ebp-108h]
+  ZArray<ATTACKINFO> aAttack; // [esp+4Ch] [ebp-100h]
+  Ztl_bstr_t sHitAni; // [esp+50h] [ebp-FCh]
+  int bCounterAttack; // [esp+54h] [ebp-F8h]
+  tagPOINT ptStart; // [esp+58h] [ebp-F4h]
+  int nMobCount; // [esp+60h] [ebp-ECh]
+  int nAction; // [esp+64h] [ebp-E8h]
+  int bLeft; // [esp+68h] [ebp-E4h]
+  SKILLENTRY *pSkill; // [esp+6Ch] [ebp-E0h]
+  int nAttackCount; // [esp+70h] [ebp-DCh]
+  int bToLeft; // [esp+74h] [ebp-D8h]
+  CMob *pMob; // [esp+78h] [ebp-D4h]
+  int v145; // [esp+7Ch] [ebp-D0h]
+  char v146; // [esp+83h] [ebp-C9h]
+  int tCur; // [esp+84h] [ebp-C8h]
+  tagRECT rcMob; // [esp+88h] [ebp-C4h]
+  _bstr_t::Data_t **v149; // [esp+98h] [ebp-B4h]
+  int bNoAction; // [esp+9Ch] [ebp-B0h]
+  int bMobChase; // [esp+A0h] [ebp-ACh]
+  int tDelay1; // [esp+A4h] [ebp-A8h]
+  int v153; // [esp+A8h] [ebp-A4h]
+  char v154; // [esp+ACh] [ebp-A0h]
+  int v155; // [esp+B0h] [ebp-9Ch]
+  char v156; // [esp+B4h] [ebp-98h]
+  CSkill_HitAni skillHitAni; // [esp+BCh] [ebp-90h]
+  int v158; // [esp+148h] [ebp-4h]
+
+  v2 = this;
+  sBallUOL.m_Data = 0;
+  if ( this->m_bOwnerIsLocal )
+    v3 = TSingleton<CUserLocal>::ms_pInstance._m_pStr;
+  else
+    v3 = (char *)CUserPool::GetUser(
+                   (CUserPool *)TSingleton<CUserPool>::ms_pInstance.m_pInterface,
+                   this->m_dwCharacterID);
+  nY = (int)v3;
+  if ( v3 && *((_DWORD *)v3 + 334) )
+    return;
+  tCur = get_update_time();
+  if ( CSummoned::_ZtlSecureGet_m_nOneTimeAction(v2) > -1 && v2->m_nSkillID != 25121133 )
+  {
+    CSummoned::ResetOneTimeAction(v2);
+    CSummoned::PrepareActionLayer(v2);
+  }
+  pSkill = CSkillInfo::GetSkill((CSkillInfo *)TSingleton<CSkillInfo>::ms_pInstance.m_Data, v2->m_nSkillID);
+  if ( !pSkill )
+    return;
+  v2->m_nCharLevel = CInPacket::Decode1(iPacket);
+  v4 = CInPacket::Decode1(iPacket);
+  v5 = v4;
+  bLeft = ((unsigned int)v4 >> 7) & 1;
+  v6 = (char *)v2->m_nSkillID;
+  if ( v6 == (char *)4111007 || v6 == (char *)&loc_40413D + 2 || v6 == (_BYTE *)&off_D75120 + 2 )
+    bLeft = CSummoned::_ZtlSecureGet_m_nMoveAction(v2) & 1;
+  nAction = v5 & 0x7F;
+  sHitAni.m_Data = (_bstr_t::Data_t *)CSummonedBase::Action2AIType((CSummonedBase *)&v2->vfptr, nAction);
+  v7 = CInPacket::Decode1(iPacket);
+  v8 = (signed int)v7 >> 4;
+  nMobCount = (signed int)v7 >> 4;
+  nAttackCount = v7 & 0xF;
+  aAttack.a = 0;
+  v158 = 0;
+  ZArray<ATTACKINFO>::_Alloc(&aAttack, v8, (ZAllocHelper *)&v146);
+  if ( v8 > 0 )
+  {
+    i = (int)aAttack.a->aDamage;
+    bCounterAttack = v8;
+    do
+    {
+      v9 = CInPacket::Decode4(iPacket);
+      *(_DWORD *)(i - 28) = v9;
+      if ( v9 )
+      {
+        v10 = CInPacket::Decode1(iPacket);
+        v11 = nAttackCount == 0;
+        v83 = nAttackCount < 0;
+        v12 = i;
+        *(_DWORD *)(i - 20) = v10;
+        if ( !v83 && !v11 )
+        {
+          v13 = nAttackCount;
+          v14 = (unsigned int *)v12;
+          do
+          {
+            v15 = CInPacket::Decode4(iPacket);
+            v14[15] = v15 >> 31;
+            *v14 = v15 & 0x7FFFFFFF;
+            ++v14;
+            --v13;
+          }
+          while ( v13 );
+        }
+      }
+      i += 180;
+      --bCounterAttack;
+    }
+    while ( bCounterAttack );
+  }
+  v16 = CInPacket::Decode1(iPacket);
+  v17 = v16;
+  bCounterAttack = v16;
+  bNoAction = (unsigned __int8)CInPacket::Decode1(iPacket);
+  pMob = (CMob *)(signed __int16)CInPacket::Decode2(iPacket);
+  v18 = CInPacket::Decode2(iPacket);
+  v11 = v2->m_bOwnerIsLocal == 0;
+  v145 = v18;
+  if ( v11 || (bMobChase = 1, !v17) )
+    bMobChase = 0;
+  v19 = aAttack.a;
+  i = 0;
+  v20 = aAttack.a;
+  while ( v19 )
+  {
+    if ( (HitPartsProcessor *)i >= v19[-1].pHitPartProcessor.p )
+    {
+      if ( v19[-1].pHitPartProcessor.p )
+      {
+        v27 = sHitAni.m_Data;
+        goto LABEL_49;
+      }
+      break;
+    }
+    v21 = v20->dwMobID;
+    if ( v20->dwMobID )
+    {
+      v22 = TSingleton<CMobPool>::ms_pInstance->m_mMob._m_apTable;
+      if ( !v22 )
+        goto LABEL_34;
+      v23 = v22[__ROR4__(v21, 5) % TSingleton<CMobPool>::ms_pInstance->m_mMob._m_uTableSize];
+      if ( !v23 )
+        goto LABEL_34;
+      while ( v23->key != v21 )
+      {
+        v23 = v23->pNext;
+        if ( !v23 )
+          goto LABEL_34;
+      }
+      v24 = (tagPOINT *)v23->value;
+      if ( v23 == (ZMap<unsigned long,__POSITION *,unsigned long>::_PAIR *)-12 )
+      {
+LABEL_34:
+        sBallUOL.m_Data = (_bstr_t::Data_t *)((unsigned int)sBallUOL.m_Data | 1);
+        pt0.y = 0;
+        v24 = &pt0;
+      }
+      v25 = (CMinion *)v24->y;
+      if ( (_DWORD)sBallUOL.m_Data & 1 )
+      {
+        sBallUOL.m_Data = (_bstr_t::Data_t *)((unsigned int)sBallUOL.m_Data & 0xFFFFFFFE);
+        if ( pt0.y )
+        {
+          ZRef<CMob>::_ReleaseRaw((ZRef<CMob> *)&pt0, 0);
+          pt0.y = 0;
+        }
+      }
+      v26 = v25;
+      if ( v25 )
+        goto LABEL_222;
+    }
+    v26 = CMinionPool::GetMinion(TSingleton<CMinionPool>::ms_pInstance, v20->dwMobID);
+    if ( v26 )
+    {
+LABEL_222:
+      ++i;
+      v19 = aAttack.a;
+      v20->pMob = (CMob *)&v26->vfptr;
+      ++v20;
+    }
+    else
+    {
+      ZArray<ATTACKINFO>::RemoveAt(&aAttack, (__POSITION *)v20);
+      v19 = aAttack.a;
+    }
+  }
+  v27 = sHitAni.m_Data;
+  if ( sHitAni.m_Data != (_bstr_t::Data_t *)1 )
+  {
+    v28 = v2->m_nSkillID;
+    if ( v28 != 35121003 && v28 != 25121133 )
+    {
+      v158 = -1;
+      if ( v19 )
+      {
+        v29 = aAttack.a;
+        v30 = &aAttack.a[-1].pHitPartProcessor.p;
+        v129 = &aAttack.a[(_DWORD)aAttack.a[-1].pHitPartProcessor.p];
+        goto LABEL_219;
+      }
+      return;
+    }
+  }
+LABEL_49:
+  if ( v19 && v19[-1].pHitPartProcessor.p )
+  {
+    v31 = get_update_time();
+    v32 = nY;
+    if ( *(_BYTE *)(nY + 53996) != 1 )
+      *(_DWORD *)(nY + 53992) = v31;
+    *(_DWORD *)(v32 + 53988) = v31;
+    *(_BYTE *)(v32 + 53996) = 1;
+  }
+  if ( !bNoAction )
+  {
+    if ( v2->m_nSkillID == 25121133 )
+    {
+      v33 = (int)&v2->vfptr;
+      v34 = (int)v2->vfptr->GetVecCtrl((IVecCtrlOwner *)&v2->vfptr);
+      v35 = (IUnknown *)(v34 + 12);
+      v36 = (*(int (__stdcall **)(int, CMob *, int))(*(_DWORD *)(v34 + 12) + 64))(v34 + 12, pMob, v145);
+      if ( v36 < 0 )
+        _com_issue_errorex(v36, v35, &_GUID_4cfb57c7_eae3_40b3_ac98_4b2750e3642a);
+      v37 = TSecType<long>::GetData(&v2->m_ptPos.x);
+      TSecType<long>::SetData(&v2->m_ptPosPrev.x, v37);
+      v38 = TSecType<long>::GetData(&v2->m_ptPos.y);
+      TSecType<long>::SetData(&v2->m_ptPosPrev.y, v38);
+      v39 = (*(int (__thiscall **)(IVecCtrlOwnerVtbl **))(*(_DWORD *)v33 + 36))(&v2->vfptr);
+      v40 = (IUnknown *)v39;
+      v41 = *(int (__stdcall **)(IUnknown *, int *))(*(_DWORD *)(v39 + 12) + 32);
+      v42 = v40 + 3;
+      nY = 0;
+      v43 = v41(v42, &nY);
+      if ( v43 < 0 )
+        _com_issue_errorex(v43, v42, &_GUID_4cfb57c7_eae3_40b3_ac98_4b2750e3642a);
+      TSecType<long>::SetData(&v2->m_ptPos.x, nY);
+      v44 = (*(int (__thiscall **)(IVecCtrlOwnerVtbl **))(*(_DWORD *)v33 + 36))(&v2->vfptr);
+      v45 = (IUnknown *)v44;
+      v46 = *(int (__stdcall **)(IUnknown *, int *))(*(_DWORD *)(v44 + 12) + 40);
+      v47 = v45 + 3;
+      nY = 0;
+      v48 = v46(v47, &nY);
+      if ( v48 < 0 )
+        _com_issue_errorex(v48, v47, &_GUID_4cfb57c7_eae3_40b3_ac98_4b2750e3642a);
+      TSecType<long>::SetData(&v2->m_ptPos.y, nY);
+      v49 = v2->m_pvc.m_pInterface;
+      if ( v49 )
+      {
+        v50 = (CVecCtrl *)&v49[-3];
+        if ( v49 != (IWzVector2D *)12 )
+        {
+          if ( v50->m_bActive )
+          {
+            sBallUOL.m_Data = (_bstr_t::Data_t *)TSecType<long>::GetData(&v2->m_ptPos.x);
+            nY = TSecType<long>::GetData(&v2->m_ptPos.y);
+            CVecCtrl::UpdatePassive(v50, (const int *)&sBallUOL, &nY);
+          }
+        }
+      }
+    }
+    v51 = v2->_ZtlSecureTear_m_nMoveAction[0];
+    if ( v2->_ZtlSecureTear_m_nMoveAction[1] + __ROR4__(v51 ^ 0xBAADF00D, 5) != v2->_ZtlSecureTear_m_nMoveAction_CS )
+    {
+      pt0.x = 5;
+      pt0.y = ptStart.y;
+      _CxxThrowException(&pt0, &_TI1_AVZException__);
+    }
+    v52 = v51 ^ __ROL4__(v2->_ZtlSecureTear_m_nMoveAction[1], 5) ^ ((unsigned __int8)bLeft ^ (unsigned __int8)(v51 ^ __ROL4__(v2->_ZtlSecureTear_m_nMoveAction[1], 5))) & 1;
+    v53 = CRand32::Random(&g_rand);
+    v2->_ZtlSecureTear_m_nMoveAction[0] = v53;
+    v54 = __ROR4__(v52 ^ v53, 5);
+    v55 = v54 + __ROR4__(v53 ^ 0xBAADF00D, 5);
+    v2->_ZtlSecureTear_m_nMoveAction[1] = v54;
+    v56 = (char *)v2->m_nSkillID;
+    v2->_ZtlSecureTear_m_nMoveAction_CS = v55;
+    if ( v56 == (char *)&loc_51312A + 2
+      || v56 == (char *)&loc_512D4B
+      || v56 == (char *)61111002
+      || v56 == (char *)61111220
+      || v56 == (_BYTE *)&loc_1524DC7 + 2
+      || v56 == (_BYTE *)&loc_2179952 + 2 )
+    {
+      v57 = v2->_ZtlSecureTear_m_nMoveAction[0];
+      if ( v2->_ZtlSecureTear_m_nMoveAction[1] + __ROR4__(v57 ^ 0xBAADF00D, 5) != v55 )
+      {
+        pt0.x = 5;
+        pt0.y = ptStart.y;
+        _CxxThrowException(&pt0, &_TI1_AVZException__);
+      }
+      v58 = v57 ^ __ROL4__(v2->_ZtlSecureTear_m_nMoveAction[1], 5);
+      *(_DWORD *)((int)v2->vfptr->GetVecCtrl((IVecCtrlOwner *)&v2->vfptr) + 392) = v58;
+    }
+    v27 = sHitAni.m_Data;
+  }
+  switch ( (unsigned int)v27 )
+  {
+    case 0u:
+      v59 = 6;
+      break;
+    case 1u:
+      v59 = 19;
+      break;
+    case 2u:
+      v59 = 16;
+      break;
+    case 3u:
+      v59 = 9;
+      break;
+    default:
+      v59 = 0;
+      break;
+  }
+  v60 = CSummonedBase::LoadAttackInfo(
+          (CSummonedBase *)&v2->vfptr,
+          (ZRef<SummonedAttackInfo> *)&pt0,
+          v2->m_nSkillID,
+          nAction - v59,
+          v2->m_nSLV,
+          (int)v27)->p;
+  nY = (int)v60;
+  if ( pt0.y )
+  {
+    if ( !InterlockedDecrement((volatile LONG *)(pt0.y + 4)) )
+    {
+      InterlockedIncrement((volatile LONG *)(pt0.y + 4));
+      if ( pt0.y )
+        (**(void (__stdcall ***)(signed int))pt0.y)(1);
+    }
+    pt0.y = 0;
+  }
+  if ( !v60 )
+  {
+    v158 = -1;
+    if ( aAttack.a )
+    {
+      v29 = aAttack.a;
+      goto LABEL_218;
+    }
+    return;
+  }
+  v11 = v27 == (_bstr_t::Data_t *)1;
+  v61 = (volatile LONG *)v60->sEffect.m_Data;
+  sHitAni.m_Data = (_bstr_t::Data_t *)v11;
+  if ( v61 )
+    InterlockedIncrement(v61 + 2);
+  v62 = (volatile LONG **)&v2->m_effectAttack.sEffect;
+  sBallUOL.m_Data = *(_bstr_t::Data_t **)(nY + 100);
+  if ( &v2->m_effectAttack.sEffect != (Ztl_bstr_t *)&pMob )
+  {
+    v63 = *v62;
+    if ( *v62 )
+    {
+      if ( !InterlockedDecrement(v63 + 2) && v63 )
+      {
+        if ( *v63 )
+          ZAPI.CoTaskMemFree((void *)(*v63 - 4));
+        if ( *((_DWORD *)v63 + 1) )
+          ZAllocEx<ZAllocAnonSelector>::Free(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, *((void **)v63 + 1));
+        ZAllocEx<ZAllocAnonSelector>::Free(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, (void *)v63);
+      }
+      *v62 = 0;
+    }
+    *v62 = v61;
+    if ( v61 )
+      InterlockedIncrement(v61 + 2);
+  }
+  v64 = tCur;
+  v65 = sHitAni.m_Data;
+  v2->m_effectAttack.bLeft = bLeft;
+  v11 = (_bstr_t::Data_t *)((char *)sBallUOL.m_Data + v64) == 0;
+  v66 = (char *)sBallUOL.m_Data + v64;
+  v2->m_effectAttack.bSelfDestruct = (int)v65;
+  v2->m_effectAttack.tStart = (int)v66;
+  if ( v11 )
+    v2->m_effectAttack.tStart = 1;
+  if ( v61 && !InterlockedDecrement(v61 + 2) )
+  {
+    if ( *v61 )
+      ZAPI.CoTaskMemFree((void *)(*v61 - 4));
+    if ( *((_DWORD *)v61 + 1) )
+      ZAllocEx<ZAllocAnonSelector>::Free(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, *((void **)v61 + 1));
+    ZAllocEx<ZAllocAnonSelector>::Free(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, (void *)v61);
+  }
+  v67 = v2->vfptr->GetPos;
+  tDelay1 = *(_DWORD *)(nY + 100);
+  v68 = (int *)((int (__thiscall *)(IVecCtrlOwnerVtbl **, tagPOINT *))v67)(&v2->vfptr, &ptStart);
+  v69 = v2->vfptr->GetPos;
+  pt0.x = *v68;
+  v70 = ((int (__thiscall *)(IVecCtrlOwnerVtbl **, tagPOINT *))v69)(&v2->vfptr, &ptStart);
+  v71 = v2->m_nSLV;
+  pt0.y = *(_DWORD *)(v70 + 4) - 25;
+  CSkill_HitAni::CSkill_HitAni(&skillHitAni, pSkill, v2->m_nCharLevel, v71, 0, nAction, nMobCount, 0, 0);
+  v72 = aAttack.a;
+  LOBYTE(v158) = 1;
+  i = 0;
+  for ( j = &aAttack.a->ptHit.y; v72; j += 45 )
+  {
+    if ( (HitPartsProcessor *)i >= v72[-1].pHitPartProcessor.p )
+      break;
+    v74 = (_DWORD *)*(j - 37);
+    v75 = *(int (__thiscall **)(_DWORD *, char *))(v74[1] + 20);
+    pMob = (CMob *)*(j - 37);
+    v76 = (_DWORD *)v75(v74 + 1, &v156);
+    v77 = (_DWORD *)((int (__thiscall *)(IVecCtrlOwnerVtbl **, char *))v2->vfptr->GetPos)(&v2->vfptr, &v154);
+    v84 = __OFSUB__(*v76, *v77);
+    v83 = *v76 - *v77 < 0;
+    v78 = pt0.y;
+    *(j - 1) = pt0.x;
+    *j = v78;
+    v129 = (ATTACKINFO *)1;
+    v128 = (int)&rcMob;
+    bToLeft = (unsigned __int8)(v83 ^ v84);
+    (*(void (__thiscall **)(_DWORD *, tagRECT *, signed int))(*v74 + 8))(v74, &rcMob, 1);
+    v79 = rcMob.left;
+    v80 = rcMob.right;
+    if ( rcMob.left >= rcMob.right || rcMob.top >= rcMob.bottom )
+      break;
+    if ( *j >= rcMob.top )
+    {
+      if ( *j <= rcMob.bottom )
+        goto LABEL_125;
+      *j = rcMob.bottom;
+    }
+    else
+    {
+      *j = rcMob.top;
+    }
+    v79 = rcMob.left;
+    v80 = rcMob.right;
+LABEL_125:
+    v81 = (v80 + v79) / 2;
+    if ( bToLeft )
+    {
+      v82 = v80 - 10;
+      v84 = __OFSUB__(v81, v82);
+      v83 = v81 - v82 < 0;
+    }
+    else
+    {
+      v82 = v79 + 10;
+      v84 = __OFSUB__(v79 + 10, v81);
+      v83 = v79 + 10 - v81 < 0;
+    }
+    if ( v83 ^ v84 )
+      v81 = v82;
+    v85 = *j - pt0.y;
+    *(j - 1) = v81;
+    v86 = v81 - pt0.x;
+    v149 = (_bstr_t::Data_t **)v85;
+    bToLeft = v86 * v86 + v85 * v85;
+    v153 = v86;
+    v87 = sqrt((double)bToLeft);
+    if ( v87 > 600.0 )
+    {
+      v88 = 600.0 / v87;
+      v89 = (double)v153 * v88 + (double)pt0.x;
+      v90 = v88 * (double)(signed int)v149;
+      *(j - 1) = (signed int)v89;
+      *j = (signed int)(v90 + (double)pt0.y);
+    }
+    *(j - 33) = tDelay1;
+    if ( v2->m_nSkillID == 35111002 )
+    {
+      v129 = (ATTACKINFO *)v2->m_nSLV;
+      v91 = get_summoned_attack_delay(35111002, (int)v129);
+      if ( v91 - 300 < 0 || v91 == 300 || (v92 = CRand32::Random(&g_rand) % (v91 - 300), v92 < 0) )
+        v92 = 0;
+      *(j - 33) += v92;
+    }
+    CSkill_HitAni::operator()(&skillHitAni, &sHitAni, i);
+    v11 = v2->m_nSkillID == (_DWORD)&loc_51312A + 1;
+    LOBYTE(v158) = 2;
+    if ( v11 )
+    {
+      v129 = 0;
+      if ( nAction == 7 )
+      {
+        SKILLENTRY::GetHitUOLByIndex(pSkill, (Ztl_bstr_t *)&nMobCount, 1, 1, 0, (int)v129);
+        v93 = (void **)nMobCount;
+        if ( nMobCount )
+        {
+          if ( !InterlockedDecrement((volatile LONG *)(nMobCount + 8)) )
+          {
+            if ( *v93 )
+              ZAPI.CoTaskMemFree((char *)*v93 - 4);
+            if ( v93[1] )
+              ZAllocEx<ZAllocAnonSelector>::Free(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, v93[1]);
+            ZAllocEx<ZAllocAnonSelector>::Free(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, v93);
+          }
+          nMobCount = 0;
+        }
+      }
+      else
+      {
+        SKILLENTRY::GetHitUOLByIndex(pSkill, (Ztl_bstr_t *)&nY, 1, 1, 1, (int)v129);
+        v94 = (void **)nY;
+        if ( nY )
+        {
+          if ( !InterlockedDecrement((volatile LONG *)(nY + 8)) )
+          {
+            if ( *v94 )
+              ZAPI.CoTaskMemFree((char *)*v94 - 4);
+            if ( v94[1] )
+              ZAllocEx<ZAllocAnonSelector>::Free(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, v94[1]);
+            ZAllocEx<ZAllocAnonSelector>::Free(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, v94);
+          }
+          nY = 0;
+        }
+      }
+    }
+    v95 = 0;
+    if ( nAttackCount > 0 )
+    {
+      v96 = j - 31;
+      do
+      {
+        if ( v2->m_bOwnerIsLocal && bCounterAttack && TSingleton<CBattleRecordMan>::ms_pInstance )
+          CBattleRecordMan::SetBattleDamageInfo(
+            TSingleton<CBattleRecordMan>::ms_pInstance,
+            i,
+            v95,
+            v2->m_nSkillID,
+            *v96,
+            v96[15],
+            1);
+        v97 = *((unsigned __int8 *)j + 8);
+        v129 = 0;
+        v128 = 0;
+        v127 = 0;
+        v126 = 0;
+        v125 = 0;
+        v124 = 0i64;
+        v123 = 0i64;
+        v122 = 0;
+        v121 = 1;
+        v120 = v97;
+        v119 = bMobChase;
+        v149 = &v118;
+        v118 = sHitAni.m_Data;
+        if ( sHitAni.m_Data )
+          InterlockedIncrement((volatile LONG *)&sHitAni.m_Data->m_RefCount);
+        CMob::AddDamageInfo(
+          pMob,
+          v2->m_dwCharacterID,
+          v2->m_nSkillID,
+          v2->m_nSLV,
+          tCur + *(j - 33),
+          *(j - 36),
+          bLeft,
+          *v96,
+          v96[15],
+          v95++,
+          1,
+          *(tagPOINT *)(j - 1),
+          (Ztl_bstr_t)v118,
+          v119,
+          v120,
+          v121,
+          v122,
+          v123,
+          SHIDWORD(v123),
+          v124,
+          SHIDWORD(v124),
+          v125,
+          (bool)v126,
+          v127,
+          v128,
+          (int)v129);
+        ++v96;
+      }
+      while ( v95 < nAttackCount );
+    }
+    v98 = (char *)v2->m_nSkillID;
+    if ( v98 == (char *)4111007 || v98 == (char *)&loc_40413D + 2 || v98 == (_BYTE *)&off_D75120 + 2 )
+    {
+      v99 = v2->_ZtlSecureTear_m_nMoveAction[0];
+      v100 = v2->_ZtlSecureTear_m_nMoveAction_CS;
+      ptStart.x = pt0.x;
+      v101 = v99 ^ __ROL4__(v2->_ZtlSecureTear_m_nMoveAction[1], 5);
+      if ( v2->_ZtlSecureTear_m_nMoveAction[1] + __ROR4__(v99 ^ 0xBAADF00D, 5) != v100 )
+      {
+        ptStart.x = 5;
+        ptStart.y = v155;
+        _CxxThrowException(&ptStart, &_TI1_AVZException__);
+      }
+      v129 = 0;
+      ptStart.x = pt0.x + ((v101 & 1) != 0 ? -25 : 25);
+      v102 = v2->m_nSLV;
+      v128 = LOBYTE(v2->m_nSLV);
+      v103 = (rcMob.right + rcMob.left) / 2;
+      v104 = (rcMob.top + rcMob.bottom) / 2;
+      SKILLENTRY::GetBallUOL(pSkill, &sBallUOL, v102, v128, 0);
+      v129 = 0;
+      v128 = 48;
+      v127 = 0;
+      LOBYTE(v158) = 3;
+      pMob = (CMob *)&v126;
+      v126 = sBallUOL.m_Data;
+      if ( sBallUOL.m_Data )
+        InterlockedIncrement((volatile LONG *)&sBallUOL.m_Data->m_RefCount);
+      CAnimationDisplayer::RegisterChainlightningAnimation(
+        (CAnimationDisplayer *)TSingleton<CAnimationDisplayer>::ms_pInstance.m_pInterface,
+        *(j - 33) + tCur,
+        *(j - 33) + tCur + 270,
+        (tagPOINT)__PAIR__(pt0.y, ptStart.x),
+        (tagPOINT)__PAIR__(v104, v103),
+        -1073343324,
+        (Ztl_bstr_t)v126,
+        (int)v127,
+        v128,
+        (bool)v129);
+      LOBYTE(v158) = 2;
+      if ( sBallUOL.m_Data )
+      {
+        v105 = sBallUOL.m_Data;
+        if ( !InterlockedDecrement((volatile LONG *)&sBallUOL.m_Data->m_RefCount) )
+        {
+          if ( v105->m_wstr )
+            ZAPI.CoTaskMemFree(v105->m_wstr - 2);
+          if ( v105->m_str )
+            ZAllocEx<ZAllocAnonSelector>::Free(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, v105->m_str);
+          ZAllocEx<ZAllocAnonSelector>::Free(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, v105);
+        }
+        sBallUOL.m_Data = 0;
+      }
+    }
+    v106 = sHitAni.m_Data;
+    LOBYTE(v158) = 1;
+    if ( sHitAni.m_Data )
+    {
+      if ( !InterlockedDecrement((volatile LONG *)&sHitAni.m_Data->m_RefCount) )
+      {
+        if ( v106->m_wstr )
+          ZAPI.CoTaskMemFree(v106->m_wstr - 2);
+        if ( v106->m_str )
+          ZAllocEx<ZAllocAnonSelector>::Free(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, v106->m_str);
+        ZAllocEx<ZAllocAnonSelector>::Free(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, v106);
+      }
+      sHitAni.m_Data = 0;
+    }
+    ++i;
+    v72 = aAttack.a;
+  }
+  if ( !v2->m_bOwnerIsLocal )
+    goto LABEL_193;
+  if ( !bCounterAttack )
+    goto LABEL_223;
+  if ( TSingleton<CBattleRecordMan>::ms_pInstance )
+    CBattleRecordMan::AddSkillUseCount(TSingleton<CBattleRecordMan>::ms_pInstance, v2->m_nSkillID);
+LABEL_193:
+  if ( !bCounterAttack )
+    goto LABEL_223;
+  if ( v2->m_nSkillID == 3221014 )
+  {
+    LOBYTE(v158) = 0;
+    CSkill_HitAni::~CSkill_HitAni(&skillHitAni);
+  }
+  else
+  {
+LABEL_223:
+    if ( !bNoAction )
+    {
+      v107 = (void *)v2->m_nSkillID;
+      if ( v107 != (void *)101100100 && v107 != (void *)101100101 && v107 != &loc_D7782B )
+      {
+        if ( v107 == &loc_D59F9B )
+          CSummoned::SetVisible(v2, 0);
+        v108 = CRand32::Random(&g_rand);
+        v109 = nAction ^ v108;
+        v2->_ZtlSecureTear_m_nOneTimeAction[0] = v108;
+        v109 = __ROR4__(v109, 5);
+        v2->_ZtlSecureTear_m_nOneTimeAction[1] = v109;
+        v2->_ZtlSecureTear_m_nOneTimeAction_CS = v109 + __ROR4__(v108 ^ 0xBAADF00D, 5);
+        CSummoned::PrepareActionLayer(v2);
+      }
+    }
+    v110 = (char *)v2->m_nSkillID;
+    if ( (unsigned int)(v110 - 33001007) <= 8 )
+    {
+      if ( v110 != (char *)101100100 && v110 != (char *)101100101 && v110 != (char *)&loc_D7782B )
+      {
+        if ( v110 == (char *)&loc_D59F9B )
+          CSummoned::SetVisible(v2, 0);
+        v111 = CRand32::Random(&g_rand);
+        v112 = nAction ^ v111;
+        v2->_ZtlSecureTear_m_nOneTimeAction[0] = v111;
+        v112 = __ROR4__(v112, 5);
+        v2->_ZtlSecureTear_m_nOneTimeAction[1] = v112;
+        v2->_ZtlSecureTear_m_nOneTimeAction_CS = v112 + __ROR4__(v111 ^ 0xBAADF00D, 5);
+        CSummoned::PrepareActionLayer(v2);
+      }
+      v113 = v2->m_pvc.m_pInterface;
+      v2->m_nSuspend = 1;
+      if ( v113 )
+        v114 = (int)&v113[-3];
+      else
+        v114 = 0;
+      *(_BYTE *)(v114 + 1061) = 1;
+      v115 = v2->_ZtlSecureTear_m_nMoveAction[0];
+      v116 = v2->_ZtlSecureTear_m_nMoveAction_CS;
+      v117 = v2->_ZtlSecureTear_m_nMoveAction[1];
+      if ( v117 + __ROR4__(v115 ^ 0xBAADF00D, 5) != v116 )
+      {
+        ptStart.x = 5;
+        ptStart.y = v155;
+        _CxxThrowException(&ptStart, &_TI1_AVZException__);
+      }
+      *(_DWORD *)(v114 + 392) = v115 ^ __ROL4__(v117, 5);
+    }
+    LOBYTE(v158) = 5;
+    `eh vector destructor iterator'(
+      skillHitAni.m_absSubHitAni,
+      4u,
+      15,
+      (void (__thiscall *)(void *))Ztl_bstr_t::~Ztl_bstr_t);
+    LOBYTE(v158) = 4;
+    `eh vector destructor iterator'(
+      skillHitAni.m_absHitAni,
+      4u,
+      15,
+      (void (__thiscall *)(void *))Ztl_bstr_t::~Ztl_bstr_t);
+    skillHitAni.vfptr = (ZRefCountedVtbl *)&ZRefCounted::`vftable';
+  }
+  v29 = aAttack.a;
+  v158 = -1;
+  if ( aAttack.a )
+  {
+LABEL_218:
+    v30 = &v29[-1].pHitPartProcessor.p;
+    v129 = &v29[(_DWORD)v29[-1].pHitPartProcessor.p];
+LABEL_219:
+    ZArray<ATTACKINFO>::_Destroy(v29, v129);
+    ZAllocEx<ZAllocAnonSelector>::Free(&ZAllocEx<ZAllocAnonSelector>::_s_alloc, v30);
+  }
+}
