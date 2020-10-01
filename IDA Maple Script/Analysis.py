@@ -57,9 +57,9 @@ def get_func_list():
 def get_func_to_write():
 	listOfEntries = get_func_list()
 	choice = int(input("What function would you like to analyze? (Enter number without the period): \n"))
-	print(f" You have selected: {listOfEntries[choice]} \n")
+	print(f" You have selected: {listOfEntries[choice-1]} \n")
 	print("--------------------------------------------------")
-	return listOfEntries[choice]
+	return listOfEntries[choice-1]
 
 def write_func_output(packet_struct, func_name):
     """
