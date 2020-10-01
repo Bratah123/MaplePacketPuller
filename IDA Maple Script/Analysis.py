@@ -2,6 +2,7 @@
 # A Script that pulls packet structure from given Maplestory IDA Pseudocode
 # Script is assuming you have named all/most the decodes functions needed in your function you want to analyze
 # IDA Python can make use of Hex to do the same thing
+import os
 import time
 from KeyWords import KEYWORDS, KEYWORDS_PRINT
 
@@ -41,9 +42,20 @@ def check_keyword_and_return(word):
             return word # just in case our keywords array doesn't already have that Decode saved
     return "";
 
+def get_func_list():
+	print("Here is a list of functions that can be processed:")
+	print("--------------------------------------------------")
+	with os.scandir(FUNC_DIR) as listOfEntries: # read contents of dir using os.scandir() from Python 3.6
+		for entry in listOfEntries:
+			# print all entries that are files
+			if entry.is_file():
+				print(entry.name[:-4]) #strips file extension via string splice
+	print("--------------------------------------------------")
+
 def get_func_to_write():
-    function = input("What function would you like to analyze?: ")
-    return function
+	get_func_list()
+	function = input("What function would you like to analyze?: ")
+	return function
 
 def write_func_output(packet_struct, func_name):
     """

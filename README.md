@@ -23,7 +23,8 @@
 | CLI Interpretor | cmd | pwsh 7.0 |
 
 Other variants for contributors to test:
-  - [ ] Python 2.7
+  - [x] Python 2.7
+    - use of os.scandir() makes it non-backwards compatible with versions older than 3.6
   - [ ] Python 3.6
   - [ ] IDA 6.8
   - [ ] IDA 7.5
