@@ -45,17 +45,21 @@ def check_keyword_and_return(word):
 def get_func_list():
 	print("Here is a list of functions that can be processed:")
 	print("--------------------------------------------------")
-	with os.scandir(FUNC_DIR) as listOfEntries: # read contents of dir using os.scandir() from Python 3.6
-		for entry in listOfEntries:
-			# print all entries that are files
-			if entry.is_file():
-				print(entry.name[:-4]) #strips file extension via string splice
+	listOfEntries = [] # read contents of dir using os.scandir() from Python 3.6
+	for num, entry in enumerate(sorted(os.scandir(FUNC_DIR), key = lambda e: e.name), start = 1):
+		# print all entries that are files
+		if entry.is_file():
+			listOfEntries.append(entry.name[:-4])
+			print(f"{num}. {listOfEntries[num-1]}") #strip file extension via string splice
 	print("--------------------------------------------------")
+	return listOfEntries
 
 def get_func_to_write():
-	get_func_list()
-	function = input("What function would you like to analyze?: ")
-	return function
+	listOfEntries = get_func_list()
+	choice = int(input("What function would you like to analyze? (Enter number without the period): \n"))
+	print(f" You have selected: {listOfEntries[choice]} \n")
+	print("--------------------------------------------------")
+	return listOfEntries[choice]
 
 def write_func_output(packet_struct, func_name):
     """
