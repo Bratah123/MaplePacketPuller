@@ -26,7 +26,7 @@ Other variants for contributors to test:
   - [x] Python 2.7
     - **NOT COMPATIBLE:** use of os.scandir() makes it non-backwards compatible with versions older than 3.6
   - [x] Python 3.6
-    - **NOT COMPATIBLE:** probably a result of string splicing
+    - **NOT COMPATIBLE:** probably a result of how f-strings handle backslashes
   - [ ] IDA 6.8
   - [ ] IDA 7.5
   - [ ] IDLE
