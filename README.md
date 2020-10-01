@@ -24,8 +24,9 @@
 
 Other variants for contributors to test:
   - [x] Python 2.7
-    - use of os.scandir() makes it non-backwards compatible with versions older than 3.6
-  - [ ] Python 3.6
+    - **NOT COMPATIBLE:** use of os.scandir() makes it non-backwards compatible with versions older than 3.6
+  - [x] Python 3.6
+    - **NOT COMPATIBLE:** probably a result of string splicing
   - [ ] IDA 6.8
   - [ ] IDA 7.5
   - [ ] IDLE
