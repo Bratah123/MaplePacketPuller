@@ -5,6 +5,7 @@
  - Options for varying the accuracy of packet structure pulls
  - Shows the structure of packets
  - Writes all packet structures to an identically named output file in `MaplePacketPuller/IDA Maple Script/FuncOutput/`
+ - Ability to search for InHeader opcodes
  
 ## Known Issues:
   - Edge-case functions may cause errors; see comments in the source code for possible fixes, i.e. line 159
@@ -43,7 +44,7 @@ Other variants for contributors to test:
 - NOTE: You will have to create a `.txt` file in the `Functions` directory with the copy-pasted pseudocode from IDA (examples in there)
   - `MaplePacketPuller/IDA Maple Script/Functions`
  
-1. Navigate to `MaplePacketPuller/IDA Maple Script/` in CLI and run `Analysis.py`
+1. Navigate to `MaplePacketPuller/IDA Maple Script/` in CLI and run `Analysis.py` or `InHeaderAnalyze.py`
     - Alternatively use a Python IDE like PyCharm
  
 2. Input the name of the file you want to analyze, i.e. the txt file you've just created
@@ -56,3 +57,4 @@ Other variants for contributors to test:
  The console output should look a little something like this:
  
  ![OnSetField](https://media.discordapp.net/attachments/746519006961336370/755117561024086036/061591b5c3d0f4a3247f9367b91b9843.png)
+ ![InHeader](https://cdn.discordapp.com/attachments/631249406775132182/761270430823612476/a1e9fd7703d4ba359d314027a47c7b3b.png)
