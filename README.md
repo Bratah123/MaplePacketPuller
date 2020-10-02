@@ -18,7 +18,7 @@
 ## Technical Stack
 |  | Target | Tested |
 | --- | --- | --- |
-| Python | 3.8.6 | 3.8.6 |
+| Python | 3.8.5 | 3.8.5 |
 | IDA Pro 32-bit | 7.0 | 7.0 |
 | Editor | Atom | Atom |
 | CLI Interpretor | cmd | pwsh 7.0 |
