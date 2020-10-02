@@ -173,11 +173,14 @@ if __name__ == '__main__':
                 beautified_arr[j] = f"  {beautified_arr[j]}"
                 j += 1
         # some functions, this will cause an index out of range error (comment out this part if so)
-        if beautified_arr[i] == "  do:":
-            j = i + 1
-            while beautified_arr[j] != "  while()":
-                beautified_arr[j] = f"   {beautified_arr[j]}"
-                j += 1
+        try:
+            if beautified_arr[i] == "  do:":
+                j = i + 1
+                while beautified_arr[j] != "  while()":
+                    beautified_arr[j] = f"   {beautified_arr[j]}"
+                    j += 1
+        except Exception as e:
+            print("Some error occured, but it shouldn't affect the decodes() just has to do with aesthetics")
 
     for word in beautified_arr: # re adds all the strings after removing do while()
         if word != '':
