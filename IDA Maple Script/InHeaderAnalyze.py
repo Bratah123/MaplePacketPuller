@@ -23,9 +23,10 @@ def get_func_to_write():
 	return listOfEntries[choice - 1]
 
 def get_func_name(txt_file_name):
-    f = open(f"{FUNC_DIR}\{txt_file_name}.txt", "r")
-    func_name = f.readline() # The func name is always gonna be at the top
-    return func_name
+	f = open(f"{FUNC_DIR}/{txt_file_name}.txt", "r")
+	func_name = f.readline() # The func name is always gonna be at the top
+	f.close()
+	return func_name
 
 def get_inheader_ops(function):
     """
@@ -33,8 +34,9 @@ def get_inheader_ops(function):
 
         :Return: String[]
     """
-    f = open(f"{FUNC_DIR}\{function}.txt", "r")
+    f = open(f"{FUNC_DIR}/{function}.txt", "r")
     file = f.readlines()
+    f.close()
     total_ops = []
     print(get_func_name(function))
     for line in file:

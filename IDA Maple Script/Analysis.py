@@ -66,8 +66,9 @@ def write_func_output(packet_struct, func_name):
         Writes a txt file with the packet structure of the given IDA function
         packet_struct: String
     """
-    f = open(f"{FUNC_OUTPUT_DIR}\{func_name}Out.txt", "w")
+    f = open(f"{FUNC_OUTPUT_DIR}/{func_name}Out.txt", "w")
     f.write(packet_struct)
+    f.close()
 
 def analyze_packet_structure(function):
     """
@@ -84,7 +85,7 @@ def analyze_packet_structure(function):
     packet_struct += func_name
     print_dbg("Packet Anaylzer, @author Brandon Nguyen")
     print_dbg("Analyzing Packet Structure, this may take a while....\n")
-    f = open(f"{FUNC_DIR}\{function}.txt", "r")
+    f = open(f"{FUNC_DIR}/{function}.txt", "r")
     file = f.readlines()
     print_dbg(func_name)
     for line in file:
@@ -120,11 +121,13 @@ def analyze_packet_structure(function):
 
     end_time = time.time()
     print_dbg(f"\nFinished analysis in {end_time - start_time} seconds!")
+    f.close()
     return packet_struct
 
 def get_func_name(txt_file_name):
-    f = open(f"{FUNC_DIR}\{function}.txt", "r")
+    f = open(f"{FUNC_DIR}/{function}.txt", "r")
     func_name = f.readline() # The func name is always gonna be at the top
+    f.close()
     return func_name
 
 def add_decode_to_list(list, word):
@@ -135,7 +138,9 @@ def add_decode_to_list(list, word):
     return list
 
 def beautify(file_name):
-    file_list = open(file_name).readlines()
+    f = open(file_name)
+    file_list = f.readlines()
+    f.close()
     return [s.rstrip('\n') for s in file_list]
 
 if __name__ == '__main__':
@@ -145,7 +150,7 @@ if __name__ == '__main__':
     print(f"Saving down packet structure to {function.upper()}out.txt")
 
     write_func_output(packet_struct, function) # write the txt file so we can beautify it
-    packet_struct_arr = beautify(f"{FUNC_OUTPUT_DIR}\{function.upper()}out.txt") # removes all the newlines from the txt file we just created
+    packet_struct_arr = beautify(f"{FUNC_OUTPUT_DIR}/{function.upper()}out.txt") # removes all the newlines from the txt file we just created
 
     write_output = ""
 
