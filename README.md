@@ -8,7 +8,6 @@
  - Ability to search for InHeader opcodes
  
 ## Known Issues:
-  - Edge-case functions may cause errors; see comments in the source code for possible fixes, i.e. line 159
   - `while()` loops aren't properly handled, i.e. whether a decode is in the scope of one well
     - Possible circumvention: may be rectified if `GET_ALL_DECODES = true`
   - The constant `GET_ALL_DECODES` when set to `True` for increased accuracy, has major aesthetic drawbacks
