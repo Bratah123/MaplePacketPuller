@@ -14,7 +14,7 @@
  
  6. We split the new ouput given from step 5 into an array named `beautifed_arr`, `write_output.split("\n")`
  
- 6. ```py
+ 7. ```py
     for i in range(beautified_len): # removes all empty do while() with no decodes inside them
       if beautified_arr[i] == "do:" and beautified_arr[i + 1] == "while()":
           beautified_arr[i] = ''
@@ -43,3 +43,8 @@
          print("Some error occured, but it shouldn't affect the decodes() just has to do with aesthetics")```
            
   Similar to step 6 of this program, we loop through each word of the `beautifed_arr[]` array, this time we check the contents of a do while loop. Given an array like   `beautifed_arr = ['do', 'CInPacket::Decode4', 'while()]` we can loop til we hit a `"do"`, once a `"do"` has been found we loop through every word of the array starting    from that `"do"` til we hit a `"while()"` indenting every "decode()" function we find between them.
+  
+  9. Finally, we concat every word in `beautifed_arr` (after cleaning from prev steps) array into variable = `clean_output`.
+  
+  10. `print()` and `write_func_output()` with the final variable `clean_output` as argument.
+---
