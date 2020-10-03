@@ -51,6 +51,17 @@
   10. `print()` and `write_func_output()` with the final variable `clean_output` as argument.
 ---
 ## Methods:
+- `def is_decode_func(func_name)`
+	- References:  1 
+	- Location of references:
+		- `analyze_packet_structure(function)` : 1
+	- Given a function name, check if it is in `KEYWORD` array and return a True/False value.
+		| Parameter | Type | Description |
+		| --- | --- | --- |
+		|   func_name | string | function to check |
+		
+		Returns: `boolean`
+	---
 - `def print_dbg(msg)`
 	- References:  9 
 	- Location of references:
@@ -106,6 +117,39 @@
 		|   list | `string[]` | list to append the function to |
 		|   word | string | word to check if its a decode and to add to list |
 		
+		Returns: `string`
+	---
+- `def get_func_list()`
+	- References:  1 
+	- Location of references:
+		- `get_func_to_write()` : 1
+	- Loop through each text file `Functions` DIR and display into console a numbered list for user to select.
+		| Parameter | Type | Description |
+		| --- | --- | --- |
+		|   None | None | None |
+		
+		Returns: `string[]`
+	---
+- `def get_func_to_write()`
+	- References:  1 
+	- Location of references:
+		- `__main__` : 1
+	- Ask user for a integer value after being given a numbered list of functions.
+		| Parameter | Type | Description |
+		| --- | --- | --- |
+		|   None | None | None |
+		
+		Returns: `string`
+	---
+- `def write_func_output(packet_struct, func_name)`
+	- References:  2 
+	- Location of references:
+		- `__main__` : 2
+	- Creates a new text file with given name and writes packet structure content into the text file.
+		| Parameter | Type | Description |
+		| --- | --- | --- |
+		|   packet_struct | string | the content it will write to this text file |
+		|   func_name | string | the name of the file when created |
 		Returns: `string`
 	---
 - `def beautify(file_name)`
