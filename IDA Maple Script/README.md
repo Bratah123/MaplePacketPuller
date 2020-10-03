@@ -150,6 +150,7 @@
 		| --- | --- | --- |
 		|   packet_struct | string | the content it will write to this text file |
 		|   func_name | string | the name of the file when created |
+		
 		Returns: `string`
 	---
 - `def beautify(file_name)`
