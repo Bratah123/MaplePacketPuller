@@ -12,11 +12,13 @@
  
  5. Loop through the ``packet_struct_arr`` and concat every string in the array into one string variable, making sure to skip any '' characters in the array.
  
- 6. ``    for i in range(beautified_len): # removes all empty do while() with no decodes inside them
-        if beautified_arr[i] == "do:" and beautified_arr[i + 1] == "while()":
-            beautified_arr[i] = ''
-            beautified_arr[i + 1] = ''
-        if beautified_arr[i] == "  do:" and beautified_arr[i + 1] == "  while()":
-            beautified_arr[i] = ''
-            beautified_arr[i + 1] = ''``
+ 6. ```py
+       for i in range(beautified_len): # removes all empty do while() with no decodes inside them
+         if beautified_arr[i] == "do:" and beautified_arr[i + 1] == "while()":
+             beautified_arr[i] = ''
+             beautified_arr[i + 1] = ''
+         if beautified_arr[i] == "  do:" and beautified_arr[i + 1] == "  while()":
+             beautified_arr[i] = ''
+             beautified_arr[i + 1] = ''
+            ```
   
