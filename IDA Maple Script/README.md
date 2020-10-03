@@ -57,7 +57,9 @@
 		- `analyze_packet_structure(function)` : 1
 	- Checks if a given function name is a "decode" function.
 	|  | Parameter | Type | Description |
+	
 	| --- | --- | --- |
+	
 	|   func_name | string | String to check |
 		
 	Returns: `boolean`
