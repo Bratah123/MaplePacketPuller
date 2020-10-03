@@ -51,7 +51,7 @@
   10. `print()` and `write_func_output()` with the final variable `clean_output` as argument.
 ---
 ## Methods:
-- `def print_dbg(msg)`
+-### `def print_dbg(msg)`
 	- References:  9 
 	- Location of references:
 		- `check_keyword_and_print(word)`: 2
