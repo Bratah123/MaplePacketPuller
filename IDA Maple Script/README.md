@@ -51,7 +51,7 @@
   10. `print()` and `write_func_output()` with the final variable `clean_output` as argument.
 ---
 ## Methods:
-- ### `def is_decode_func(func_name)`
+-`def is_decode_func(func_name)`
 	- References:  1 
 	- Location of references:
 		- `analyze_packet_structure(function)` : 1
