@@ -22,19 +22,19 @@ if :
 while()
 CInPacket::Decode1()
 CInPacket::Decode1()
-      nCurItemID = (signed __int16)CInPacket::Decode2(iPacket);
-          GW_ItemSlotBase::Decode(&pItem, iPacket);
+CInPacket::Decode2()
+ItemSlotBase::Decode()
 while()
-          nBagMaxSlot = (signed __int16)CInPacket::Decode2(iPacket);
+CInPacket::Decode2()
 while()
-          v61 = (signed __int16)CInPacket::Decode2(iPacket);
+CInPacket::Decode2()
 CInPacket::Decode1()
 while()
-          v99 = CInPacket::Decode8(iPacket);
-          v101 = CInPacket::Decode4(iPacket);
-          nNumber = (signed __int16)CInPacket::Decode2(iPacket);
-          v129 = CInPacket::Decode2(iPacket);
-          GW_ItemSlotBase::Decode(&v226, iPacket);
+CInPacket::Decode8()
+CInPacket::Decode4()
+CInPacket::Decode2()
+CInPacket::Decode2()
+ItemSlotBase::Decode()
 while()
 while()
 while()
