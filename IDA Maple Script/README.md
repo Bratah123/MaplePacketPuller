@@ -69,7 +69,7 @@
 		- `check_keyword_and_print(word)`: 2
 		- `analyze_packet_structure(function)` : 7
 	- Prints out a given string, if `PRINT` constant is `True` (see line 11).
-		|  | Parameter | Type | Description |
+		| Parameter | Type | Description |
 		| --- | --- | --- |
 		|   msg | string | message to print |
 		
@@ -80,7 +80,7 @@
 	- Location of references:
 		- `analyze_packet_structure(function)` : 1
 	- Given a word, check if that word is a "decode" function and print out a corresponding string in `KEYWORD_PRINT` array.
-		|  | Parameter | Type | Description |
+		| Parameter | Type | Description |
 		| --- | --- | --- |
 		|   word | string | word to check and print if `True` |
 		
@@ -92,7 +92,7 @@
 		- `check_keyword_and_print(word)`: 2
 		- `analyze_packet_structure(function)` : 7
 	- Prints out a given string, if `PRINT` constant is `True` (see line 11).
-		|  | Parameter | Type | Description |
+		| Parameter | Type | Description |
 		| --- | --- | --- |
 		|   msg | string | message to print |
 		
@@ -103,7 +103,7 @@
 	- Location of references:
 		- `analyze_packet_structure(function)` : 1
 	- Given a word, check if that word is a "decode" function and print out a corresponding string in `KEYWORD_PRINT` array.
-		|  | Parameter | Type | Description |
+		| Parameter | Type | Description |
 		| --- | --- | --- |
 		|   word | string | word to check and print if `True` |
 		
@@ -114,7 +114,7 @@
 	- Location of references:
 		- `analyze_packet_structure(function)` : 3
 	- `check_keyword_and_return(word)` extends `def check_keyword_and_print(word)`  in functionality but returns the corresponding string in `KEYWORD_PRINT` array instead of printing to console.
-		|  | Parameter | Type | Description |
+		| Parameter | Type | Description |
 		| --- | --- | --- |
 		|   word | string | word to check and return if `True` |
 		
@@ -125,7 +125,7 @@
 	- Location of references:
 		- `analyze_packet_structure(function)` : 1
 	- Opens a file in `Functions` directory with the given file name and returns the first line of the txt file (which is the function name) then closes the file.
-		|  | Parameter | Type | Description |
+		| Parameter | Type | Description |
 		| --- | --- | --- |
 		|   txt_file_name | string | text file name to open in `Functions` DIR |
 		
@@ -136,7 +136,7 @@
 	- Location of references:
 		- `analyze_packet_structure(function)` : 1
 	- Given a `list` and a `word` (function name) check if that word is a `"decode"` function, and if it is add it to the given list.
-		|  | Parameter | Type | Description |
+		| Parameter | Type | Description |
 		| --- | --- | --- |
 		|   list | `string[]` | list to append the function to |
 		|   word | string | word to check if its a decode and to add to list |
@@ -148,7 +148,7 @@
 	- Location of references:
 		- `__main__` : 1
 	- Open a file with the given file name and remove every `newline` (`'\n'`) and adds it to an array.
-		|  | Parameter | Type | Description |
+		| Parameter | Type | Description |
 		| --- | --- | --- |
 		|   file_name | string | text file to open |
 		
