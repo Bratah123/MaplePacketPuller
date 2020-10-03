@@ -17,7 +17,7 @@
 ## Technical Stack
 |  | Target | Tested |
 | --- | --- | --- |
-| Python | 3.8.5 | 3.8.6 |
+| Python | 3.8.5 | 3.6.12 & 3.8.6 |
 | IDA Pro 32-bit | 7.0 | 7.0 |
 | Editor | Atom | Atom |
 | CLI Interpretor | cmd | pwsh 7.0 |
@@ -26,7 +26,8 @@ Other variants for contributors to test:
   - [x] Python 2.7
     - **NOT COMPATIBLE:** use of os.scandir() makes it non-backwards compatible with versions older than 3.6
   - [x] Python 3.6
-    - **NOT COMPATIBLE:** probably a result of how f-strings handle backslashes
+    - <del>**NOT COMPATIBLE:** probably a result of how f-strings handle backslashes</del>
+    - *Update: Fixed as of commit 10a9fd86c4da264ef6d1d73a6aca248343cf63f6*
   - [ ] IDA 6.8
   - [ ] IDA 7.5
   - [ ] IDLE
