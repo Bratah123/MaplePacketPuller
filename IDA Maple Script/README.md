@@ -22,7 +22,8 @@
       if beautified_arr[i] == "  do:" and beautified_arr[i + 1] == "  while()":
           beautified_arr[i] = ''
           beautified_arr[i + 1] = ''
-  
+    ```
+    
   7. The `beautifed_arr` is an array which stores each line (i.e. `beautifed_arr = ['do', 'while()']`), we loop through each word of this array and every time a `"do"` is found   in the array we check the next index of the array to see if its a `"while()"`. If a `"while()"` is found right after a `"do"` has been encountered, we remove them both from     the array.
   
     ```py
