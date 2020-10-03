@@ -40,6 +40,6 @@
                     beautified_arr[j] = f"   {beautified_arr[j]}"
                     j += 1
         except Exception as e:
-            print("Some error occured, but it shouldn't affect the decodes() just has to do with aesthetics")
+            print("Some error occured, but it shouldn't affect the decodes() just has to do with aesthetics")```
             
     Similar to step 6 of this program, we loop through each word of the ``beautifed_arr[]`` array, this time we check the contents of a do while loop. Given an array like      ``beautifed_arr = ['do', 'CInPacket::Decode4', 'while()]`` we can loop til we hit a ``"do"``, once a ``"do"`` has been found we loop through every word of the array starting    from that ``"do"`` til we hit a ``"while()"`` indenting every "decode()" function we find between them.
