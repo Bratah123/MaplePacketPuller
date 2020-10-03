@@ -51,7 +51,7 @@
   10. `print()` and `write_func_output()` with the final variable `clean_output` as argument.
 ---
 ## Methods:
--`def is_decode_func(func_name)`
+- `def is_decode_func(func_name)`
 	- References:  1 
 	- Location of references:
 		- `analyze_packet_structure(function)` : 1
@@ -85,12 +85,12 @@
 		
 		Returns: `boolean`
 	---
-- ### `def print_dbg(msg)`
+- `def print_dbg(msg)`
 	- References:  9 
 	- Location of references:
 		- `check_keyword_and_print(word)`: 2
 		- `analyze_packet_structure(function)` : 7
-	- Prints out the given string, if `PRINT` constant is `True` (see line 11).
+	- Prints out a given string, if `PRINT` constant is `True` (see line 11).
 		|  | Parameter | Type | Description |
 		| --- | --- | --- |
 		|   msg | string | message to print |
