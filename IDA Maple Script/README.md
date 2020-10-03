@@ -125,7 +125,7 @@
 		|   list | `string[]` | list to append the function to |
 		|   word | string | word to check if its a decode and to add to list |
 		
-		Returns: `string`
+		Returns: `string[]`
 	---
 - `def get_func_list()`
 	- References:  1 
@@ -159,7 +159,7 @@
 		|   packet_struct | string | the content it will write to this text file |
 		|   func_name | string | the name of the file when created |
 		
-		Returns: `string`
+		Returns: `void`
 	---
 - `def beautify(file_name)`
 	- References:  1 
