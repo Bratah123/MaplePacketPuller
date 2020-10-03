@@ -50,3 +50,105 @@
   
   10. `print()` and `write_func_output()` with the final variable `clean_output` as argument.
 ---
+## Methods
+- `def is_decode_func(func_name)`
+	- References:  1 
+	- Location of references:
+		- `analyze_packet_structure(function)` : 1
+	- Checks if a given function name is a "decode" function.
+		|  | Parameter | Type | Description |
+		| --- | --- | --- |
+		|   func_name | string | String to check |
+		
+		Returns: `boolean`
+	---
+- `def print_dbg(msg)`
+	- References:  9 
+	- Location of references:
+		- `check_keyword_and_print(word)`: 2
+		- `analyze_packet_structure(function)` : 7
+	- Prints out a given string, if `PRINT` constant is `True` (see line 11).
+		|  | Parameter | Type | Description |
+		| --- | --- | --- |
+		|   msg | string | message to print |
+		
+		Returns: `void`
+	---
+- `def check_keyword_and_print(word)`
+	- References:  1 
+	- Location of references:
+		- `analyze_packet_structure(function)` : 1
+	- Given a word, check if that word is a "decode" function and print out a corresponding string in `KEYWORD_PRINT` array.
+		|  | Parameter | Type | Description |
+		| --- | --- | --- |
+		|   word | string | word to check and print if `True` |
+		
+		Returns: `boolean`
+	---
+- `def print_dbg(msg)`
+	- References:  9 
+	- Location of references:
+		- `check_keyword_and_print(word)`: 2
+		- `analyze_packet_structure(function)` : 7
+	- Prints out the given string, if `PRINT` constant is `True` (see line 11).
+		|  | Parameter | Type | Description |
+		| --- | --- | --- |
+		|   msg | string | message to print |
+		
+		Returns: `void`
+	---
+- `def check_keyword_and_print(word)`
+	- References:  1 
+	- Location of references:
+		- `analyze_packet_structure(function)` : 1
+	- Given a word, check if that word is a "decode" function and print out a corresponding string in `KEYWORD_PRINT` array.
+		|  | Parameter | Type | Description |
+		| --- | --- | --- |
+		|   word | string | word to check and print if `True` |
+		
+		Returns: `boolean`
+	---
+- `def check_keyword_and_return(word)`
+	- References:  3 
+	- Location of references:
+		- `analyze_packet_structure(function)` : 3
+	- `check_keyword_and_return(word)` extends `def check_keyword_and_print(word)`  in functionality but returns the corresponding string in `KEYWORD_PRINT` array instead of printing to console.
+		|  | Parameter | Type | Description |
+		| --- | --- | --- |
+		|   word | string | word to check and return if `True` |
+		
+		Returns: `string`
+	---
+- `def get_func_name(txt_file_name)`
+	- References:  1 
+	- Location of references:
+		- `analyze_packet_structure(function)` : 1
+	- Opens a file in `Functions` directory with the given file name and returns the first line of the txt file (which is the function name) then closes the file.
+		|  | Parameter | Type | Description |
+		| --- | --- | --- |
+		|   txt_file_name | string | text file name to open in `Functions` DIR |
+		
+		Returns: `string`
+	---
+- `def add_decode_to_list([list], word)`
+	- References:  1 
+	- Location of references:
+		- `analyze_packet_structure(function)` : 1
+	- Given a `list` and a `word` (function name) check if that word is a `"decode"` function, and if it is add it to the given list.
+		|  | Parameter | Type | Description |
+		| --- | --- | --- |
+		|   list | `string[]` | list to append the function to |
+		|   word | string | word to check if its a decode and to add to list |
+		
+		Returns: `string`
+	---
+- `def beautify(file_name)`
+	- References:  1 
+	- Location of references:
+		- `__main__` : 1
+	- Open a file with the given file name and remove every `newline` (`'\n'`) and adds it to an array.
+		|  | Parameter | Type | Description |
+		| --- | --- | --- |
+		|   file_name | string | text file to open |
+		
+		Returns: `string[]`
