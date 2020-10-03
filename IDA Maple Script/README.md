@@ -2,6 +2,7 @@
  
 
 ## Overall Flow of Program <h2>
+ ---
  1. Asking user for a file to analyze. ``function = get_func_to_write()``
  
  2. Passing in the ``function`` variable  to function ``analyze_packet_structure()``, returns a string containing packet structure.
