@@ -57,7 +57,7 @@
 		- `check_keyword_and_print(word)`: 2
 		- `analyze_packet_structure(function)` : 7
 	- Prints out a given string, if `PRINT` constant is `True` (see line 11).
-		|  | Parameter | Type | Description |
+		| Parameter | Type | Description |
 		| --- | --- | --- |
 		|   msg | string | message to print |
 		
