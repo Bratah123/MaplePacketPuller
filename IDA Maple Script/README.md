@@ -51,7 +51,7 @@
   10. `print()` and `write_func_output()` with the final variable `clean_output` as argument.
 ---
 ## Methods:
-- `def is_decode_func(func_name)`
+- ### `def is_decode_func(func_name)`
 	- References:  1 
 	- Location of references:
 		- `analyze_packet_structure(function)` : 1
@@ -62,7 +62,7 @@
 		
 		Returns: `boolean`
 	---
-- `def print_dbg(msg)`
+- ### `def print_dbg(msg)`
 	- References:  9 
 	- Location of references:
 		- `check_keyword_and_print(word)`: 2
@@ -74,7 +74,7 @@
 		
 		Returns: `void`
 	---
-- `def check_keyword_and_print(word)`
+- ### `def check_keyword_and_print(word)`
 	- References:  1 
 	- Location of references:
 		- `analyze_packet_structure(function)` : 1
@@ -85,7 +85,7 @@
 		
 		Returns: `boolean`
 	---
-- `def print_dbg(msg)`
+- ### `def print_dbg(msg)`
 	- References:  9 
 	- Location of references:
 		- `check_keyword_and_print(word)`: 2
@@ -97,7 +97,7 @@
 		
 		Returns: `void`
 	---
-- `def check_keyword_and_print(word)`
+- ### `def check_keyword_and_print(word)`
 	- References:  1 
 	- Location of references:
 		- `analyze_packet_structure(function)` : 1
@@ -108,7 +108,7 @@
 		
 		Returns: `boolean`
 	---
-- `def check_keyword_and_return(word)`
+- ### `def check_keyword_and_return(word)`
 	- References:  3 
 	- Location of references:
 		- `analyze_packet_structure(function)` : 3
@@ -119,7 +119,7 @@
 		
 		Returns: `string`
 	---
-- `def get_func_name(txt_file_name)`
+- ### `def get_func_name(txt_file_name)`
 	- References:  1 
 	- Location of references:
 		- `analyze_packet_structure(function)` : 1
@@ -130,7 +130,7 @@
 		
 		Returns: `string`
 	---
-- `def add_decode_to_list([list], word)`
+- ### `def add_decode_to_list([list], word)`
 	- References:  1 
 	- Location of references:
 		- `analyze_packet_structure(function)` : 1
@@ -142,7 +142,7 @@
 		
 		Returns: `string`
 	---
-- `def beautify(file_name)`
+- ### `def beautify(file_name)`
 	- References:  1 
 	- Location of references:
 		- `__main__` : 1
