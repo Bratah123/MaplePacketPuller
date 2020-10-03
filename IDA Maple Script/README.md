@@ -2,7 +2,7 @@
 # Code Documentation:
  
 
-## Overall Flow of Program
+## Overall Flow of Program:
  1. Asking user for a file to analyze. `function = get_func_to_write()`
  
  2. Passing in the `function` variable  to function `analyze_packet_structure()`, returns a string containing packet structure.
@@ -50,7 +50,7 @@
   
   10. `print()` and `write_func_output()` with the final variable `clean_output` as argument.
 ---
-## Methods
+## Methods:
 - `def is_decode_func(func_name)`
 	- References:  1 
 	- Location of references:
