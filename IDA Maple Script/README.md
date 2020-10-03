@@ -20,4 +20,23 @@
       if beautified_arr[i] == "  do:" and beautified_arr[i + 1] == "  while()":
           beautified_arr[i] = ''
           beautified_arr[i + 1] = ''
-   The packet_struct_arr is an array which stores each line (i.e. ``packet_stuct_arr = ['do', 'while()']``), we loop through each word of this array and every time a ``"do"`` is      found in the array we check the next index of the array to see if its a ``"while()"``. If a ``"while()"`` is found right after a ``"do"`` has been encountered we remove them      both from the array.
+   The ``packet_struct_arr`` is an array which stores each line (i.e. ``packet_stuct_arr = ['do', 'while()']``), we loop through each word of this array and every time a ``"do"``    is found in the array we check the next index of the array to see if its a ``"while()"``. If a ``"while()"`` is found right after a ``"do"`` has been encountered, we remove them both from the array.
+   
+
+ 7. ```py
+       for i in range(beautified_len): # checking for any contents inside a do while loop and spacing them out for visual aesthetics
+        if beautified_arr[i] == "do:":
+            j = i + 1
+            while beautified_arr[j] != "while()":
+                beautified_arr[j] = f"  {beautified_arr[j]}"
+                j += 1
+        # some functions, this will cause an index out of range error (comment out this part if so)
+        try:
+            if beautified_arr[i] == "  do:":
+                j = i + 1
+                while beautified_arr[j] != "  while()":
+                    beautified_arr[j] = f"   {beautified_arr[j]}"
+                    j += 1
+        except Exception as e:
+            print("Some error occured, but it shouldn't affect the decodes() just has to do with aesthetics")
+    
