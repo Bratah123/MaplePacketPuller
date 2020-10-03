@@ -56,9 +56,9 @@
 	- Location of references:
 		- `analyze_packet_structure(function)` : 1
 	- Checks if a given function name is a "decode" function.
-		|  | Parameter | Type | Description |
-		| --- | --- | --- |
-		|   func_name | string | String to check |
+	|  | Parameter | Type | Description |
+	| --- | --- | --- |
+	|   func_name | string | String to check |
 		
 	Returns: `boolean`
 	---
@@ -72,7 +72,7 @@
 		| --- | --- | --- |
 		|   msg | string | message to print |
 		
-	Returns: `void`
+		Returns: `void`
 	---
 - ### `def check_keyword_and_print(word)`
 	- References:  1 
