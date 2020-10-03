@@ -60,7 +60,7 @@
 		| --- | --- | --- |
 		|   func_name | string | String to check |
 		
-		Returns: `boolean`
+	Returns: `boolean`
 	---
 - ### `def print_dbg(msg)`
 	- References:  9 
@@ -72,7 +72,7 @@
 		| --- | --- | --- |
 		|   msg | string | message to print |
 		
-		Returns: `void`
+	Returns: `void`
 	---
 - ### `def check_keyword_and_print(word)`
 	- References:  1 
