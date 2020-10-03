@@ -20,5 +20,4 @@
          if beautified_arr[i] == "  do:" and beautified_arr[i + 1] == "  while()":
              beautified_arr[i] = ''
              beautified_arr[i + 1] = ''
-            ```
   
