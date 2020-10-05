@@ -14,8 +14,8 @@ KEYWORDS = [ # used to check in the files
     "starplanetrank::decode",
     "characterdata::decode",
     "cwvscontext::decodestarplanetroundinfo",
-    "cuser::decodetextEquipinfo",
-    "cuser::decodefreezeHotEventinfo",
+    "cuser::decodetextequipinfo",
+    "cuser::decodefreezehoteventinfo",
     "cuser::decodeeventbestfriendinfo",
     "avatardata::decode",
     "characterstat::decode",
@@ -36,7 +36,7 @@ KEYWORDS = [ # used to check in the files
     "farmuserinfo::decode",
     "memorialcubeinfo::decode",
     "runnergamerecord::decode",
-    "characterData::decodetextequipinfo",
+    "characterdata::decodetextequipinfo",
     "do\n",
     "while"
 ]

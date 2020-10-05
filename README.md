@@ -43,15 +43,17 @@ Other variants for contributors to test:
 
 - NOTE: You will have to create a `.txt` file in the `Functions` directory with the copy-pasted pseudocode from IDA (examples in there)
   - `MaplePacketPuller/IDA Maple Script/Functions`
- 
-1. Navigate to `MaplePacketPuller/IDA Maple Script/` in CLI and run `Analysis.py` or `InHeaderAnalyze.py`
+
+1. Navigate to `MaplePacketPuller/IDA Maple Script/src/main/python` in `CLI` and run `main.py`
     - Alternatively use a Python IDE like PyCharm
+
+2. Input the type of Analysis you want to do
+
+3. Input the name of the file you want to analyze, i.e. the txt file you've just created
  
-2. Input the name of the file you want to analyze, i.e. the txt file you've just created
+4. Let the program analyze it.
  
-3. Let the program analyze it.
- 
-4. Now packet structure should be yours! :octocat:
+5. Now packet structure should be yours! :octocat:
     - see `MaplePacketPuller/IDA Maple Script/FuncOutput/`
 
  The console output should look a little something like this:

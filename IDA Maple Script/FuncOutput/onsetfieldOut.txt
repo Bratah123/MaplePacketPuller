@@ -59,6 +59,8 @@ while()
 CUser::StarPlanetRank::Decode()
 CInPacket::Decode1()
 CWvsContext::DecodeStarPlanetRoundInfo()
+CUser::DecodeTextEquipInfo()
+CUser::DecodeFreezeHotEventInfo()
 CUser::DecodeEventBestFriendInfo()
 if :
   while()
