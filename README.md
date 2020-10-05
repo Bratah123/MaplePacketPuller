@@ -31,7 +31,8 @@ Other variants for contributors to test:
   - [ ] IDA 6.8
   - [ ] IDA 7.5
   - [ ] IDLE
-  - [ ] PyCharm Community Edition 2020.1.1 (or later)
+  - [x] PyCharm Community Edition 2020.1.1 (or later)
+    - **COMPATIBLE** Tested as of commit `dfef676d4897dbc8195120f6f803a8810420d319`
 
 ---
 # How to use
