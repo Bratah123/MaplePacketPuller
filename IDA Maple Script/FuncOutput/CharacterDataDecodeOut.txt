@@ -10,14 +10,12 @@ if :
   do:
      CInPacket::Decode4()
   while()
-while()
 CInPacket::Decode4()
 if :
   do:
      CInPacket::Decode4()
      CInPacket::DecodeBuffer()
   while()
-while()
 CInPacket::Decode1()
 if :
   CInPacket::Decode1()
@@ -88,14 +86,12 @@ if :
    
    
   while()
-while()
 do:
   CInPacket::Decode1()
 while()
 if :
   CInPacket::Decode4()
   CInPacket::Decode4()
-CInPacket::Decode4()
 if :
   CInPacket::Decode1()
   CInPacket::Decode2()
@@ -114,7 +110,6 @@ if :
   while()
   NonBPEquip::Decode()
   VirtualEquipInventory::Decode()
-VirtualEquipInventory::Decode()
 do:
   CInPacket::Decode1()
   do:
@@ -244,7 +239,6 @@ if :
   do:
      CInPacket::Decode4()
   while()
-while()
 if :
   while()
   do:
@@ -299,7 +293,6 @@ if :
      CInPacket::Decode4()
   while()
   while()
-while()
 if :
   CInPacket::Decode4()
   CInPacket::Decode4()
@@ -326,12 +319,10 @@ if :
      CInPacket::DecodeStr()
      InviteInfo::DecodeMonsterLifeInviteInfo()
   while()
-while()
 CInPacket::Decode1()
 if :
   CInPacket::Decode4()
   CInPacket::Decode4()
-CInPacket::Decode4()
 if :
   CInPacket::Decode1()
   CInPacket::Decode2()
@@ -349,10 +340,8 @@ if :
   CInPacket::Decode4()
 if :
   ReturnEffectInfo::Decode()
-ReturnEffectInfo::Decode()
 if :
   DressUpInfo::Decode()
-DressUpInfo::Decode()
 if :
   CInPacket::Decode2()
   do:
@@ -371,18 +360,14 @@ if :
   FarmUserInfo::Decode()
   CInPacket::Decode4()
   CInPacket::Decode4()
-CInPacket::Decode4()
 if :
   MemorialCubeInfo::Decode()
-MemorialCubeInfo::Decode()
 if :
   CInPacket::Decode4()
   CInPacket::DecodeBuffer()
   CInPacket::Decode4()
-CInPacket::Decode4()
 if :
   RunnerGameRecord::Decode()
-RunnerGameRecord::Decode()
 CInPacket::Decode2()
 if :
   do:

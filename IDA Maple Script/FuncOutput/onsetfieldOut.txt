@@ -29,7 +29,6 @@ CInPacket::DecodeBuffer()
 CInPacket::Decode4()
 if CInPacket::Decode1():
   CFieldCustom::Decode()
-CFieldCustom::Decode()
 CInPacket::Decode1()
 CInPacket::Decode1()
 if CInPacket::Decode1():
@@ -42,7 +41,6 @@ if :
 CUser::StarPlanetRank::Decode()
 if CInPacket::Decode1():
   CWvsContext::DecodeStarPlanetRoundInfo()
-CWvsContext::DecodeStarPlanetRoundInfo()
 CUser::DecodeTextEquipInfo()
 CUser::DecodeFreezeHotEventInfo()
 CUser::DecodeEventBestFriendInfo()
