@@ -41,14 +41,14 @@ class PacketAnalysis(Analyzer):
 
         in_if_statement = False
 
-        arr_index = 0  # file starts at 0 cause its an array
+        arr_index = 1  # file starts at 0 cause its an array
         packet_struct += func_name
         Util.print_dbg("Packet Anaylzer, @author Brandon Nguyen")
         Util.print_dbg("Analyzing Packet Structure, this may take a while....\n")
         f = open(f"{FUNC_DIR}/{self.txt_file_name}.txt", "r")
         file = f.readlines()
         Util.print_dbg(func_name)
-        line_index = 0
+        line_index = 1
         length_of_file = len(file)
         while line_index < length_of_file:
             line = file[line_index]

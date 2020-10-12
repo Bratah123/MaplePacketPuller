@@ -1,5 +1,4 @@
 unsigned __int64 __thiscall CharacterData::Decode(CharacterData *this, CInPacket *iPacket, int bBackwardUpdate)
-CharacterData::Decode()
 CInPacket::DecodeBuffer()
 CInPacket::Decode1()
 do:
