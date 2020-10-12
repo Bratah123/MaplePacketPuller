@@ -6,6 +6,7 @@ from src.main.python.enum.AnalysisType import AnalysisType
 
 
 class Util:
+
     @staticmethod
     def is_decode_func(func_name):
         for key in KEYWORDS:

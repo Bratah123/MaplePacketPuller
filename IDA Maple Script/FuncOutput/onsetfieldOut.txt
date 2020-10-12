@@ -13,28 +13,16 @@ if :
   do:
      CInPacket::DecodeStr()
   while()
-CInPacket::DecodeStr()
-do:
-  CInPacket::DecodeStr()
-while()
 if :
   CInPacket::Decode4()
   CInPacket::Decode4()
   CInPacket::Decode4()
   CharacterData::Decode()
-CInPacket::Decode4()
-CInPacket::Decode4()
-CInPacket::Decode4()
-CharacterData::Decode()
 else:
   CInPacket::Decode1()
   CInPacket::Decode4()
   CInPacket::Decode1()
   CInPacket::Decode4()
-CInPacket::Decode1()
-CInPacket::Decode4()
-CInPacket::Decode1()
-CInPacket::Decode4()
 CInPacket::Decode1()
 CInPacket::Decode1()
 CInPacket::DecodeBuffer()
@@ -46,18 +34,14 @@ CInPacket::Decode1()
 CInPacket::Decode1()
 if CInPacket::Decode1():
   CInPacket::Decode4()
-CInPacket::Decode4()
 if :
   CInPacket::Decode1()
   do:
      CInPacket::DecodeStr()
   while()
-CInPacket::Decode1()
-do:
-  CInPacket::DecodeStr()
-while()
 CUser::StarPlanetRank::Decode()
-CInPacket::Decode1()
+if CInPacket::Decode1():
+  CWvsContext::DecodeStarPlanetRoundInfo()
 CWvsContext::DecodeStarPlanetRoundInfo()
 CUser::DecodeTextEquipInfo()
 CUser::DecodeFreezeHotEventInfo()
@@ -66,8 +50,5 @@ if :
   while()
   while()
   while()
-while()
-while()
-while()
 if :
 if :

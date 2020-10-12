@@ -11,6 +11,7 @@ from src.main.python.util.Utility import Util
 
 
 def main():
+
     analysis_type = Util.get_analysis_type()
     function = Util.get_func_to_write()
 

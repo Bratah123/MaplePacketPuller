@@ -48,24 +48,34 @@ class PacketAnalysis(Analyzer):
         f = open(f"{FUNC_DIR}/{self.txt_file_name}.txt", "r")
         file = f.readlines()
         Util.print_dbg(func_name)
-        for line in file:
-
+        line_index = 0
+        length_of_file = len(file)
+        while line_index < length_of_file:
+            line = file[line_index]
             decodes_in_if = []
             if_or_else = ""
+            lines_to_skip = 0
             # It would prob be easier to print the line like it is in the txt file as it is already spaced
             if KEYWORDS[5] in line or KEYWORDS[6] in line:  # check if we are at an if / else statement
                 if KEYWORDS[5] in line:
                     if_or_else += "if " + Util.check_keyword_and_return(line) + ":"
                 if KEYWORDS[6] in line:
                     if_or_else += "else:"
+
                 check_next_line = file[arr_index + 1] == "  {\n"  # check if its a non nested if
-                if Util.is_decode_func(file[
-                                           arr_index + 1]):  # if the if statement is a one liner condition, we have to check if that one line is a decode
-                    Util.print_dbg(Util.check_keyword_and_return(file[arr_index + 1]))
-                if check_next_line:  # if we are in the scope of an if, find when it ends
+                if not check_next_line:
+                    decodes_in_if = Util.add_decode_to_list(decodes_in_if,
+                                                            Util.check_keyword_and_return(file[arr_index + 1]))
+                    if len(decodes_in_if) > 0:
+                        check_next_line = True
+                        lines_to_skip += 1
+                    else:
+                        check_next_line = False
+                elif check_next_line:  # if we are in the scope of an if, find when it ends
                     i = 1
                     while file[arr_index + i] != "  }\n":
                         decodes_in_if = Util.add_decode_to_list(decodes_in_if, file[arr_index + i])
+                        lines_to_skip += 1
                         i += 1
                 in_if_statement = check_next_line
 
@@ -75,10 +85,12 @@ class PacketAnalysis(Analyzer):
                 for decode in decodes_in_if:
                     Util.print_dbg(f"  {decode}")
                     packet_struct += "  " + decode + "\n"
+                line_index += lines_to_skip
             elif Util.check_keyword_and_print(line):  # if we aren't in an if statement print out the decodes normally
                 packet_struct += Util.check_keyword_and_return(line) + "\n"
+                line_index += 1
 
-            arr_index += 1
+            arr_index = line_index
 
         end_time = time.time()
         Util.print_dbg(f"\nFinished analysis in {end_time - start_time} seconds!")
@@ -152,11 +164,10 @@ class PacketAnalysis(Analyzer):
             if word != '':
                 clean_output += f"{word}\n"
 
-        self.packet_struct = clean_output # set packet_struct to the new clean output for the rewrite
+        self.packet_struct = clean_output  # set packet_struct to the new clean output for the rewrite
         print("Cleaned-up packet structure: \n")
         print(clean_output)
         print("--------------------------------------------------")
         self.write_func_output()
         raise SystemExit("Analysis complete. Results written to the FuncOutput folder. \n Process will now "
                          "terminate!")
-
