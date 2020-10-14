@@ -64,8 +64,7 @@ class PacketAnalysis(Analyzer):
 
                 check_next_line = file[arr_index + 1] == "  {\n"  # check if its a non nested if
                 if not check_next_line:
-                    decodes_in_if = Util.add_decode_to_list(decodes_in_if,
-                                                            Util.check_keyword_and_return(file[arr_index + 1]))
+                    decodes_in_if = Util.add_decode_to_list(decodes_in_if, file[arr_index + 1])
                     if len(decodes_in_if) > 0:
                         check_next_line = True
                         lines_to_skip += 2
