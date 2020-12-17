@@ -1,4 +1,5 @@
 # Maplestory Packet Puller
+- For a better experience using this, check out the [SpiritIDAPlugin](https://github.com/Bratah123/SpiritIDAPlugin) project!
 
 ## Features:
  - Reads keywords from IDA-generated pseudocode, and formats them into a form that is friendly for server encodes
